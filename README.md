@@ -1,1 +1,1 @@
-Projekt na zajęcia z prohgramowania obiektowego
+Projekt na zajęcia z programowania obiektowego

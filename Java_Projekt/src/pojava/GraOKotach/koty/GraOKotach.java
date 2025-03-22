@@ -11,9 +11,9 @@ public class GraOKotach extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	JPanel cards;
-	MainPanel mainP;
-	MenuPanel menu;
-	CatPanel catP;
+	MainPanel mainPanel;
+	MenuPanel menuPanel;
+	CatPanel catPanel;
 	String command;
 	CardLayout cardLayout;
 	
@@ -23,19 +23,19 @@ public class GraOKotach extends JFrame implements ActionListener {
 		cards = new JPanel(cardLayout);
 		this.add(cards);
 		
-		menu = new MenuPanel();
-		cards.add(menu, "1");
+		menuPanel = new MenuPanel();
+		cards.add(menuPanel, "1");
 		
-		mainP = new MainPanel();
-		cards.add(mainP, "2");
-		catP = new CatPanel();
-		cards.add(catP, "3");
+		mainPanel = new MainPanel();
+		cards.add(mainPanel, "2");
+		catPanel = new CatPanel();
+		cards.add(catPanel, "3");
 		
-		menu.start.addActionListener(this);
-		menu.exit.addActionListener(this);
-		mainP.backToMenu.addActionListener(this);
-		mainP.cat.addActionListener(this);
-		catP.backToMain.addActionListener(this);
+		menuPanel.start.addActionListener(this);
+		menuPanel.exit.addActionListener(this);
+		mainPanel.backToMenuButton.addActionListener(this);
+		mainPanel.catButton.addActionListener(this);
+		catPanel.backToMainButton.addActionListener(this);
 		
 		cardLayout.show(cards, "1");
 	}

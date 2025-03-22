@@ -19,34 +19,34 @@ public class MenuPanel extends JPanel{
 	
 	public JButton start, exit, next;
 	BoxLayout boxLayout;
-	JPanel panelSrodkowy, panelZGuzikami; 
-	JLabel napis;
+	JPanel centerPanel, buttonPanel; 
+	JLabel label;
 	
 	public MenuPanel() {
 		super();
-		panelSrodkowy = new JPanel(new BorderLayout());
-		panelSrodkowy.setBackground(Color.PINK);
-		panelZGuzikami = new JPanel(new GridLayout(2,1,0,10));
-		panelZGuzikami.setBackground(Color.PINK);
+		centerPanel = new JPanel(new BorderLayout());
+		centerPanel.setBackground(Color.PINK);
+		buttonPanel = new JPanel(new GridLayout(2,1,0,10));
+		buttonPanel.setBackground(Color.PINK);
 		
 		start = new JButton("START");
 		start.setActionCommand("start");
 		exit = new JButton("EXIT");
 		exit.setActionCommand("exit");
 		
-		panelZGuzikami.add(start);
-		panelZGuzikami.add(exit);
+		buttonPanel.add(start);
+		buttonPanel.add(exit);
 		
-		napis = new JLabel("Gra o kotach");
-		napis.setFont(new Font("Serif", Font.BOLD, 20));
+		label = new JLabel("Gra o kotach");
+		label.setFont(new Font("Serif", Font.BOLD, 20));
 		
-		panelSrodkowy.add(napis, BorderLayout.PAGE_START);
-		panelSrodkowy.add(panelZGuzikami, BorderLayout.CENTER);
+		centerPanel.add(label, BorderLayout.PAGE_START);
+		centerPanel.add(buttonPanel, BorderLayout.CENTER);
 		
 		boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
 		this.setLayout(boxLayout);
 		this.setBorder(new EmptyBorder(new Insets(100, 100, 100, 100)));
-		this.add(panelSrodkowy);
+		this.add(centerPanel);
 		
 		
 		this.setBackground(Color.PINK);

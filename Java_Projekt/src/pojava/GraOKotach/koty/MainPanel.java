@@ -12,34 +12,34 @@ import javax.swing.border.EmptyBorder;
 public class MainPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	public JButton backToMenu, cat;
-	JPanel panelGorny, panelSrodkowy;
+	public JButton backToMenuButton, catButton;
+	JPanel upperPanel, centerPanel;
 	
 	MainPanel(){
 		super();
 		
-		panelGorny = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelGorny.setBackground(Color.pink);
+		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		upperPanel.setBackground(Color.pink);
 		
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
 		
-		this.add(panelGorny, BorderLayout.BEFORE_FIRST_LINE);
+		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
 		
-		backToMenu = new JButton("BACK");
-		backToMenu.setActionCommand("menu");
-		backToMenu.setBounds(15,15,60,15);
-		panelGorny.add(backToMenu);
+		backToMenuButton = new JButton("BACK");
+		backToMenuButton.setActionCommand("menu");
+		backToMenuButton.setBounds(15,15,60,15);
+		upperPanel.add(backToMenuButton);
 		
 		
-		panelSrodkowy = new JPanel();
-		panelSrodkowy.setBackground(Color.pink);
-		this.add(panelSrodkowy, BorderLayout.CENTER);
+		centerPanel = new JPanel();
+		centerPanel.setBackground(Color.pink);
+		this.add(centerPanel, BorderLayout.CENTER);
 		
-		cat = new JButton("cat");
-		cat.setActionCommand("cat");
+		catButton = new JButton("cat");
+		catButton.setActionCommand("cat");
 		
-		panelSrodkowy.add(cat);
+		centerPanel.add(catButton);
 		
 		this.setBackground(Color.PINK);
 	}

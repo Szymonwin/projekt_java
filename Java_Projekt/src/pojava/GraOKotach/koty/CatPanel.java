@@ -12,24 +12,24 @@ import javax.swing.border.EmptyBorder;
 public class CatPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	public JButton backToMain;
-	JPanel panelGorny;
+	public JButton backToMainButton;
+	JPanel upperPanel;
 
 	CatPanel(){
 		super();
 		
-		panelGorny = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelGorny.setBackground(Color.pink);
+		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		upperPanel.setBackground(Color.pink);
 		
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
 		
-		this.add(panelGorny, BorderLayout.BEFORE_FIRST_LINE);
+		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
 		
-		backToMain = new JButton("BACK");
-		backToMain.setActionCommand("backToMain");
-		backToMain.setBounds(15,15,60,15);
-		panelGorny.add(backToMain);
+		backToMainButton = new JButton("BACK");
+		backToMainButton.setActionCommand("backToMain");
+		backToMainButton.setBounds(15,15,60,15);
+		upperPanel.add(backToMainButton);
 		
 		
 		this.setBackground(Color.PINK);

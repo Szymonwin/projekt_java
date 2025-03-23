@@ -14,7 +14,7 @@ public class MainPanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected JButton backToMenuButton, catButton;
+	protected JButton backToMenuButton, catButton1, catButton2, catButton3, catButton4;
 	private JPanel upperPanel, centerPanel;
 	
 	protected MainPanel(){
@@ -33,11 +33,20 @@ public class MainPanel extends JPanel {
 		
 		backToMenuButton = new JButton("BACK");
 		backToMenuButton.setActionCommand("menu");
-		catButton = new JButton("cat");
-		catButton.setActionCommand("cat");
+		catButton1 = new JButton("cat1");
+		catButton1.setActionCommand("cat1");
+		catButton2 = new JButton("cat2");
+		catButton2.setActionCommand("cat2");
+		catButton3 = new JButton("cat3");
+		catButton3.setActionCommand("cat3");
+		catButton4 = new JButton("cat4");
+		catButton4.setActionCommand("cat4");
 		
-		centerPanel.add(catButton);
 		upperPanel.add(backToMenuButton);
+		centerPanel.add(catButton1);
+		centerPanel.add(catButton2);
+		centerPanel.add(catButton3);
+		centerPanel.add(catButton4);
 		
 		this.setBackground(Color.PINK);
 	}

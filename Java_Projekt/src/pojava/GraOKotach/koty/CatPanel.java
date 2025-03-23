@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import java.awt.Insets;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -15,8 +16,9 @@ public class CatPanel extends JPanel {
 	
 	protected JButton backToMainButton;
 	private JPanel upperPanel;
+	private JLabel catName;
 
-	protected CatPanel(){
+	protected CatPanel(String cat){
 		super();
 		
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -31,6 +33,9 @@ public class CatPanel extends JPanel {
 		backToMainButton.setActionCommand("backToMain");
 		backToMainButton.setBounds(15,15,60,15);
 		upperPanel.add(backToMainButton);
+		
+		catName = new JLabel(cat);
+		upperPanel.add(catName);
 		
 		
 		this.setBackground(Color.PINK);

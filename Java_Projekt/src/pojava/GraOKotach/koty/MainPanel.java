@@ -9,37 +9,35 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+//ekran glowny, na ktorym bedzie mozna wybrac kota
 public class MainPanel extends JPanel {
+	
 	private static final long serialVersionUID = 1L;
 	
-	public JButton backToMenuButton, catButton;
-	JPanel upperPanel, centerPanel;
+	protected JButton backToMenuButton, catButton;
+	private JPanel upperPanel, centerPanel;
 	
-	MainPanel(){
+	protected MainPanel(){
 		super();
-		
+		//inicjalizacja kolejnych paneli, zeby bylo ustawione estetycznie
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		upperPanel.setBackground(Color.pink);
+		upperPanel.setBackground(Color.MAGENTA);
+		centerPanel = new JPanel();
+		centerPanel.setBackground(Color.YELLOW);
 		
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
 		
 		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
+		this.add(centerPanel, BorderLayout.CENTER);
 		
 		backToMenuButton = new JButton("BACK");
 		backToMenuButton.setActionCommand("menu");
-		backToMenuButton.setBounds(15,15,60,15);
-		upperPanel.add(backToMenuButton);
-		
-		
-		centerPanel = new JPanel();
-		centerPanel.setBackground(Color.pink);
-		this.add(centerPanel, BorderLayout.CENTER);
-		
 		catButton = new JButton("cat");
 		catButton.setActionCommand("cat");
 		
 		centerPanel.add(catButton);
+		upperPanel.add(backToMenuButton);
 		
 		this.setBackground(Color.PINK);
 	}

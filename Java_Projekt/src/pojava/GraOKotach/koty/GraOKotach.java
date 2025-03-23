@@ -6,31 +6,32 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 
 public class GraOKotach extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	JPanel cards;
-	MainPanel mainPanel;
-	MenuPanel menuPanel;
-	CatPanel catPanel;
-	String command;
-	CardLayout cardLayout;
+	private JPanel cards;
+	private MainPanel mainPanel;
+	private MenuPanel menuPanel;
+	private CatPanel catPanel;
+	private String command;
+	private CardLayout cardLayout;
 	
 	public GraOKotach(String title) {
 		super(title);
 		cardLayout = new CardLayout();
 		cards = new JPanel(cardLayout);
 		this.add(cards);
-		
+		//tworzymy panele i dodajemy je do cards
 		menuPanel = new MenuPanel();
 		cards.add(menuPanel, "1");
-		
 		mainPanel = new MainPanel();
 		cards.add(mainPanel, "2");
 		catPanel = new CatPanel();
 		cards.add(catPanel, "3");
 		
+		//dodajemy actionListener do wszystkich guzikow
 		menuPanel.start.addActionListener(this);
 		menuPanel.exit.addActionListener(this);
 		mainPanel.backToMenuButton.addActionListener(this);
@@ -40,6 +41,7 @@ public class GraOKotach extends JFrame implements ActionListener {
 		cardLayout.show(cards, "1");
 	}
 	
+	//funckja onslugujaca wszystkie guziki w programie
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		command = e.getActionCommand();
@@ -65,6 +67,14 @@ public class GraOKotach extends JFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
+		
+		try {
+			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        }
+        catch (Exception e) {
+            System.out.print(isDefaultLookAndFeelDecorated());
+        }
+		
 		GraOKotach okienko = new GraOKotach("kiciusie");
 		okienko.setSize(500,500);
 		okienko.setVisible(true);

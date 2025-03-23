@@ -9,17 +9,18 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+//ekran z pojedynczym kotem i jego statystykami
 public class CatPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	public JButton backToMainButton;
-	JPanel upperPanel;
+	protected JButton backToMainButton;
+	private JPanel upperPanel;
 
-	CatPanel(){
+	protected CatPanel(){
 		super();
 		
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		upperPanel.setBackground(Color.pink);
+		upperPanel.setBackground(Color.MAGENTA);
 		
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));

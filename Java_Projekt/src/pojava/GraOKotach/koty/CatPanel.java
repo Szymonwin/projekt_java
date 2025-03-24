@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
+//ggggggggggg
 //ekran z pojedynczym kotem i jego statystykami
 public class CatPanel extends JPanel {
 	private static final long serialVersionUID = 1L;

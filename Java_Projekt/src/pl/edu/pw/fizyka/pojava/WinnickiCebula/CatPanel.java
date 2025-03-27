@@ -1,4 +1,4 @@
-package pojava.GraOKotach.koty;
+package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

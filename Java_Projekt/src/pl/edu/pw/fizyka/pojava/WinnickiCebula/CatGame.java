@@ -1,4 +1,4 @@
-package pojava.GraOKotach.koty;
+package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
 import java.awt.CardLayout; 
 import java.awt.event.ActionEvent;
@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
-public class GraOKotach extends JFrame implements ActionListener {
+public class CatGame extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel cards;
@@ -18,7 +18,7 @@ public class GraOKotach extends JFrame implements ActionListener {
 	private String command;
 	private CardLayout cardLayout;
 	
-	public GraOKotach(String title) {
+	public CatGame(String title) {
 		super(title);
 		cardLayout = new CardLayout();
 		cards = new JPanel(cardLayout);
@@ -96,7 +96,7 @@ public class GraOKotach extends JFrame implements ActionListener {
             System.out.print(isDefaultLookAndFeelDecorated());
         }
 		
-		GraOKotach frame = new GraOKotach("kitties");
+		CatGame frame = new CatGame("kitties");
 		frame.setSize(500,500);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);

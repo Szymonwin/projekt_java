@@ -19,8 +19,8 @@ import javax.swing.border.EmptyBorder;
 public class CatPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	protected JButton backToMainButton;
-	private JPanel upperPanel, listOfFood, BarPanel, centerPanel, catImage;
+	protected JButton backToMainButton, foodToGive1, foodToGive2, foodToGive3, foodToGive4, foodToGive5, foodToGive6;
+	private JPanel upperPanel, listOfFood, BarPanel, centerPanel, catImage, foodPanel;
 	private JLabel catName,Cat_png, happinessLabel,hungryLabel;
 	private JMenuBar food;
 	private JMenu foodList;
@@ -29,6 +29,7 @@ public class CatPanel extends JPanel {
 
 	protected CatPanel(String cat){
 		super();
+		this.setBackground(Color.PINK);
 		
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		upperPanel.setBackground(Color.MAGENTA);
@@ -59,7 +60,6 @@ public class CatPanel extends JPanel {
 		foodList.add(food3);
 		food.add(foodList);
 		listOfFood.add(food);
-		this.setBackground(Color.PINK);
 		
 		centerPanel = new JPanel();
 		this.add(centerPanel,BorderLayout.CENTER);
@@ -85,5 +85,27 @@ public class CatPanel extends JPanel {
 		BarPanel.add(hungryLabel);
 		BarPanel.add(hunger);
 		
+		foodPanel = new JPanel();
+		foodPanel.setBackground(Color.magenta);
+		foodPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		foodToGive1 = new JButton("Food1");
+		foodToGive1.setToolTipText("Food1");
+		foodPanel.add(foodToGive1);
+		foodToGive2 = new JButton("Food2");
+		foodToGive2.setToolTipText("Food2");
+		foodPanel.add(foodToGive2);
+		foodToGive3 = new JButton("Food3");
+		foodToGive3.setToolTipText("Food3");
+		foodPanel.add(foodToGive3);
+		foodToGive4 = new JButton("Food4");
+		foodToGive4.setToolTipText("Food4");
+		foodPanel.add(foodToGive4);
+		foodToGive5 = new JButton("Food5");
+		foodToGive5.setToolTipText("Food5");
+		foodPanel.add(foodToGive5);
+		foodToGive6 = new JButton("Food6");
+		foodToGive6.setToolTipText("Food6");
+		foodPanel.add(foodToGive6);
+		this.add(foodPanel,BorderLayout.PAGE_END);
 	}
 }

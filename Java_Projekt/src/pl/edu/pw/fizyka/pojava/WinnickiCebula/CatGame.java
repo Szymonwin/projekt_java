@@ -1,6 +1,8 @@
+//Autor: Marianna
 package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
-import java.awt.CardLayout; 
+import java.awt.CardLayout;
+import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -88,19 +90,21 @@ public class CatGame extends JFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-		
-		try {
-			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-        }
-        catch (Exception e) {
-            System.out.print(isDefaultLookAndFeelDecorated());
-        }
-		
-		CatGame frame = new CatGame("kitties");
-		frame.setSize(500,500);
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		EventQueue.invokeLater(
+				new Runnable(){
+					public void run() {
+						try {
+							UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+						}
+						catch (Exception e) {
+							System.out.print(isDefaultLookAndFeelDecorated());
+						}
+						CatGame frame = new CatGame("kitties");
+						frame.setSize(500,500);
+						frame.setVisible(true);
+						frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+					}
+				}
+		);
 	}
-
 }
-

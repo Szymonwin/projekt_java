@@ -1,3 +1,4 @@
+//Autor: Marianna
 package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
 

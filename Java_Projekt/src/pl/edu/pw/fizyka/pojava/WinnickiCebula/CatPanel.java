@@ -4,11 +4,8 @@ package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.Insets;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -23,7 +20,7 @@ public class CatPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	protected JButton backToMainButton;
-	private JPanel upperPanel, BarPanel, centerPanel, catImage;
+	private JPanel upperPanel, listOfFood, BarPanel, centerPanel, catImage;
 	private JLabel catName,Cat_png, happinessLabel,hungryLabel;
 	private JMenuBar food;
 	private JMenu foodList;
@@ -32,9 +29,8 @@ public class CatPanel extends JPanel {
 
 	protected CatPanel(String cat){
 		super();
-		this.setBackground(Color.PINK);
 		
-		upperPanel = new JPanel(new BoxLayout(upperPanel, BoxLayout.X_AXIS));
+		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		upperPanel.setBackground(Color.MAGENTA);
 		
 		this.setLayout(new BorderLayout());
@@ -46,12 +42,13 @@ public class CatPanel extends JPanel {
 		backToMainButton.setActionCommand("backToMain");
 		backToMainButton.setBounds(15,15,60,15);
 		upperPanel.add(backToMainButton);
-		upperPanel.add(Box.createHorizontalStrut(10));
 		
 		catName = new JLabel(cat);
 		upperPanel.add(catName);
-		upperPanel.add(Box.createHorizontalStrut(10));
-
+		
+		listOfFood = new JPanel();
+		listOfFood.setBackground(Color.YELLOW);
+		this.add(listOfFood, BorderLayout.LINE_END);
 		food = new JMenuBar();
 		foodList = new JMenu("lista potraw");
 		food1 = new JMenuItem("1");
@@ -61,7 +58,8 @@ public class CatPanel extends JPanel {
 		foodList.add(food2);
 		foodList.add(food3);
 		food.add(foodList);
-		upperPanel.add(food);
+		listOfFood.add(food);
+		this.setBackground(Color.PINK);
 		
 		centerPanel = new JPanel();
 		this.add(centerPanel,BorderLayout.CENTER);

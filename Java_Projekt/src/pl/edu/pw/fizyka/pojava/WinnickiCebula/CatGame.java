@@ -100,7 +100,7 @@ public class CatGame extends JFrame implements ActionListener {
 							System.out.print(isDefaultLookAndFeelDecorated());
 						}
 						CatGame frame = new CatGame("kitties");
-						frame.setSize(500,500);
+						frame.setSize(600,550);
 						frame.setVisible(true);
 						frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 					}

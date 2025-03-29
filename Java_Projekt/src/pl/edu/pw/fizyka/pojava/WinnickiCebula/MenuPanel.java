@@ -28,9 +28,9 @@ public class MenuPanel extends JPanel{
 		
 		//panel srodkowy oraz panel z guzikami
 		centerPanel = new JPanel(new BorderLayout()); 
-		centerPanel.setBackground(Color.YELLOW);
+		centerPanel.setBackground(Color.PINK);
 		buttonPanel = new JPanel(new GridLayout(2,1,0,10));
-		buttonPanel.setBackground(Color.MAGENTA);
+		buttonPanel.setBackground(Color.PINK);
 		
 		start = new JButton("START");
 		start.setActionCommand("start");

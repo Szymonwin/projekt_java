@@ -26,7 +26,7 @@ public class MainPanel extends JPanel {
 		
 		//panel z przyciskiem powrotu do ekranu startowego 
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		upperPanel.setBackground(Color.MAGENTA);
+		upperPanel.setBackground(Color.PINK);
 		
 		backToMenuButton = new JButton("BACK");
 		backToMenuButton.setActionCommand("menu");
@@ -36,7 +36,7 @@ public class MainPanel extends JPanel {
 		
 		//panel z kotami
 		centerPanel = new JPanel();
-		centerPanel.setBackground(Color.YELLOW);
+		centerPanel.setBackground(Color.PINK);
 		
 		catButton1 = new JButton("cat1");
 		catButton1.setActionCommand("cat1");

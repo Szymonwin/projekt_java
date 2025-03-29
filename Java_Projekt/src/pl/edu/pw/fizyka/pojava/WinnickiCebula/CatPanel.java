@@ -33,7 +33,7 @@ public class CatPanel extends JPanel {
 		
 		//panel górny z przyciskiem powrotu do MainPanel i imieniem kota
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		upperPanel.setBackground(Color.MAGENTA);
+		upperPanel.setBackground(Color.PINK);
 		
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
@@ -50,7 +50,7 @@ public class CatPanel extends JPanel {
 		
 		//lista ulubionych potraw kota
 		listOfFood = new JPanel();
-		listOfFood.setBackground(Color.YELLOW);
+		listOfFood.setBackground(Color.PINK);
 		this.add(listOfFood, BorderLayout.LINE_END);
 		
 		food = new JMenuBar();
@@ -73,7 +73,7 @@ public class CatPanel extends JPanel {
 		
 		//panel z statystykami kota
 		BarPanel = new JPanel();
-		BarPanel.setBackground(Color.CYAN);
+		BarPanel.setBackground(Color.PINK);
 		
 		happiness = new JProgressBar(0,100);
 		happiness.setValue(50);
@@ -99,7 +99,7 @@ public class CatPanel extends JPanel {
 		
 		//panel dolny z listą dostępnych potraw
 		foodPanel = new JPanel();
-		foodPanel.setBackground(Color.magenta);
+		foodPanel.setBackground(Color.PINK);
 		foodPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		this.add(foodPanel,BorderLayout.PAGE_END);
 		

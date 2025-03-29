@@ -11,8 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 
 public class CatGame extends JFrame implements ActionListener {
-
 	private static final long serialVersionUID = 1L;
+	
 	private JPanel cards;
 	private MainPanel mainPanel;
 	private MenuPanel menuPanel;
@@ -22,9 +22,11 @@ public class CatGame extends JFrame implements ActionListener {
 	
 	public CatGame(String title) {
 		super(title);
+		
 		cardLayout = new CardLayout();
 		cards = new JPanel(cardLayout);
 		this.add(cards);
+		
 		//tworzymy panele i dodajemy je do cards
 		menuPanel = new MenuPanel();
 		cards.add(menuPanel, "menu");

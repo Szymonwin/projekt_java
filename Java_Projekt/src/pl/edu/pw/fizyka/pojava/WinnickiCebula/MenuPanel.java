@@ -16,7 +16,6 @@ import javax.swing.border.EmptyBorder;
 
 //ekran startowy gry
 public class MenuPanel extends JPanel{
-	
 	private static final long serialVersionUID = 1L;
 	
 	protected JButton start, exit, next;
@@ -26,6 +25,7 @@ public class MenuPanel extends JPanel{
 	
 	protected MenuPanel() {
 		super();
+		
 		//panel srodkowy oraz panel z guzikami
 		centerPanel = new JPanel(new BorderLayout()); 
 		centerPanel.setBackground(Color.YELLOW);

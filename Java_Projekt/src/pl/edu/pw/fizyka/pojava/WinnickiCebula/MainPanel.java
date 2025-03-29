@@ -12,7 +12,6 @@ import javax.swing.border.EmptyBorder;
 
 //ekran glowny, na ktorym bedzie mozna wybrac kota
 public class MainPanel extends JPanel {
-	
 	private static final long serialVersionUID = 1L;
 	
 	protected JButton backToMenuButton, catButton1, catButton2, catButton3, catButton4;

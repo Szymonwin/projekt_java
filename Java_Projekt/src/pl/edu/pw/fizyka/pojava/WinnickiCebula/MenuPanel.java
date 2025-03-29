@@ -26,7 +26,7 @@ public class MenuPanel extends JPanel{
 	
 	protected MenuPanel() {
 		super();
-		//inicjalizacja kolejnych paneli, zeby bylo ustawione estetycznie
+		//panel srodkowy oraz panel z guzikami
 		centerPanel = new JPanel(new BorderLayout()); 
 		centerPanel.setBackground(Color.YELLOW);
 		buttonPanel = new JPanel(new GridLayout(2,1,0,10));
@@ -41,14 +41,14 @@ public class MenuPanel extends JPanel{
 		buttonPanel.add(exit);
 		
 		label = new JLabel("Gra o kotach");
-		label.setFont(new Font("Serif", Font.BOLD, 20));
+		label.setFont(new Font("Helvetica", Font.BOLD, 20));
 		
 		centerPanel.add(label, BorderLayout.PAGE_START);
 		centerPanel.add(buttonPanel, BorderLayout.CENTER);
 		
-		//koenieczne do zachowania estetyki
+		//walory estetyczne
 		boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
-		this.setLayout(boxLayout); //zeby wypelnic maksymanlnie gora - dol
+		this.setLayout(boxLayout); 
 		this.setBorder(new EmptyBorder(new Insets(100, 100, 100, 100)));
 		this.add(centerPanel);
 		

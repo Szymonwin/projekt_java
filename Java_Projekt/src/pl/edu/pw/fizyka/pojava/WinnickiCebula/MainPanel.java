@@ -20,20 +20,25 @@ public class MainPanel extends JPanel {
 	
 	protected MainPanel(){
 		super();
-		//inicjalizacja kolejnych paneli, zeby bylo ustawione estetycznie
-		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		upperPanel.setBackground(Color.MAGENTA);
-		centerPanel = new JPanel();
-		centerPanel.setBackground(Color.YELLOW);
 		
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
+		this.setBackground(Color.PINK);
 		
-		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
-		this.add(centerPanel, BorderLayout.CENTER);
+		//panel z przyciskiem powrotu do ekranu startowego 
+		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		upperPanel.setBackground(Color.MAGENTA);
 		
 		backToMenuButton = new JButton("BACK");
 		backToMenuButton.setActionCommand("menu");
+		
+		upperPanel.add(backToMenuButton);
+		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
+		
+		//panel z kotami
+		centerPanel = new JPanel();
+		centerPanel.setBackground(Color.YELLOW);
+		
 		catButton1 = new JButton("cat1");
 		catButton1.setActionCommand("cat1");
 		catButton2 = new JButton("cat2");
@@ -43,13 +48,11 @@ public class MainPanel extends JPanel {
 		catButton4 = new JButton("cat4");
 		catButton4.setActionCommand("cat4");
 		
-		upperPanel.add(backToMenuButton);
 		centerPanel.add(catButton1);
 		centerPanel.add(catButton2);
 		centerPanel.add(catButton3);
 		centerPanel.add(catButton4);
-		
-		this.setBackground(Color.PINK);
+		this.add(centerPanel, BorderLayout.CENTER);
 	}
 	
 }

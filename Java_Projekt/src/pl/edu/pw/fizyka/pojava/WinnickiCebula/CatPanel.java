@@ -31,6 +31,7 @@ public class CatPanel extends JPanel {
 		super();
 		this.setBackground(Color.PINK);
 		
+		//panel górny z przyciskiem powrotu do MainPanel i imieniem kota
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		upperPanel.setBackground(Color.MAGENTA);
 		
@@ -47,31 +48,32 @@ public class CatPanel extends JPanel {
 		catName = new JLabel(cat);
 		upperPanel.add(catName);
 		
+		//lista ulubionych potraw kota
 		listOfFood = new JPanel();
 		listOfFood.setBackground(Color.YELLOW);
 		this.add(listOfFood, BorderLayout.LINE_END);
+		
 		food = new JMenuBar();
 		foodList = new JMenu("lista potraw");
 		food1 = new JMenuItem("1");
 		food2 = new JMenuItem("2");
 		food3 = new JMenuItem("3");
+		
 		foodList.add(food1);
 		foodList.add(food2);
 		foodList.add(food3);
+		
 		food.add(foodList);
 		listOfFood.add(food);
 		
+		//panel centralny z obrazkiem kota oraz jego statystykami
 		centerPanel = new JPanel();
 		this.add(centerPanel,BorderLayout.CENTER);
 		centerPanel.setLayout(new BorderLayout());
+		
+		//panel z statystykami kota
 		BarPanel = new JPanel();
 		BarPanel.setBackground(Color.CYAN);
-		centerPanel.add(BarPanel, BorderLayout.PAGE_START);
-		catImage = new JPanel();
-		catImage.setBackground(Color.pink);
-		Cat_png = new JLabel("Cat.PNG");
-		catImage.add(Cat_png);
-		centerPanel.add(catImage,BorderLayout.CENTER);
 		
 		happiness = new JProgressBar(0,100);
 		happiness.setValue(50);
@@ -80,32 +82,45 @@ public class CatPanel extends JPanel {
 		BarPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		happinessLabel = new JLabel("Happiness");
 		hungryLabel = new JLabel("Hungry");
+		
 		BarPanel.add(happinessLabel);
 		BarPanel.add(happiness);
 		BarPanel.add(hungryLabel);
 		BarPanel.add(hunger);
+		centerPanel.add(BarPanel, BorderLayout.PAGE_START);
 		
+		//panel z obrazkiem kota
+		catImage = new JPanel();
+		Cat_png = new JLabel("Cat.PNG");
+		catImage.setBackground(Color.pink);
+		
+		catImage.add(Cat_png);
+		centerPanel.add(catImage,BorderLayout.CENTER);
+		
+		//panel dolny z listą dostępnych potraw
 		foodPanel = new JPanel();
 		foodPanel.setBackground(Color.magenta);
 		foodPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		this.add(foodPanel,BorderLayout.PAGE_END);
+		
 		foodToGive1 = new JButton("Food1");
 		foodToGive1.setToolTipText("Food1");
-		foodPanel.add(foodToGive1);
 		foodToGive2 = new JButton("Food2");
 		foodToGive2.setToolTipText("Food2");
-		foodPanel.add(foodToGive2);
 		foodToGive3 = new JButton("Food3");
 		foodToGive3.setToolTipText("Food3");
-		foodPanel.add(foodToGive3);
 		foodToGive4 = new JButton("Food4");
 		foodToGive4.setToolTipText("Food4");
-		foodPanel.add(foodToGive4);
 		foodToGive5 = new JButton("Food5");
 		foodToGive5.setToolTipText("Food5");
-		foodPanel.add(foodToGive5);
 		foodToGive6 = new JButton("Food6");
 		foodToGive6.setToolTipText("Food6");
+		
+		foodPanel.add(foodToGive1);
+		foodPanel.add(foodToGive2);
+		foodPanel.add(foodToGive3);
+		foodPanel.add(foodToGive4);
+		foodPanel.add(foodToGive5);
 		foodPanel.add(foodToGive6);
-		this.add(foodPanel,BorderLayout.PAGE_END);
 	}
 }

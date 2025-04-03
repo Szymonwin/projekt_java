@@ -18,8 +18,8 @@ import javax.swing.border.EmptyBorder;
 //ekran z pojedynczym kotem i jego statystykami
 public class CatPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	
 	private static final Color backgroundColor = new Color(255, 200, 251);
+	
 	protected JButton backToMainButton, foodToGive1, foodToGive2, foodToGive3, foodToGive4, foodToGive5, foodToGive6;
 	private JPanel upperPanel, listOfFood, BarPanel, centerPanel, catImage, foodPanel;
 	private JLabel catName,Cat_png, happinessLabel,hungryLabel;

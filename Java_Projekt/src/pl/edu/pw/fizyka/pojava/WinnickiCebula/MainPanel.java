@@ -13,8 +13,8 @@ import javax.swing.border.EmptyBorder;
 //ekran glowny, na ktorym bedzie mozna wybrac kota
 public class MainPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	
 	private static final Color backgroundColor = new Color(255, 200, 251);
+	
 	protected JButton backToMenuButton, catButton1, catButton2, catButton3, catButton4;
 	private JPanel upperPanel, centerPanel;
 	

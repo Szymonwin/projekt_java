@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 public class CatPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
+	private static final Color backgroundColor = new Color(255, 200, 251);
 	protected JButton backToMainButton, foodToGive1, foodToGive2, foodToGive3, foodToGive4, foodToGive5, foodToGive6;
 	private JPanel upperPanel, listOfFood, BarPanel, centerPanel, catImage, foodPanel;
 	private JLabel catName,Cat_png, happinessLabel,hungryLabel;
@@ -29,11 +30,11 @@ public class CatPanel extends JPanel {
 
 	protected CatPanel(String cat){
 		super();
-		this.setBackground(Color.PINK);
+		this.setBackground(backgroundColor);
 		
 		//panel górny z przyciskiem powrotu do MainPanel i imieniem kota
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		upperPanel.setBackground(Color.PINK);
+		upperPanel.setBackground(backgroundColor);
 		
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
@@ -50,7 +51,7 @@ public class CatPanel extends JPanel {
 		
 		//lista ulubionych potraw kota
 		listOfFood = new JPanel();
-		listOfFood.setBackground(Color.PINK);
+		listOfFood.setBackground(backgroundColor);
 		this.add(listOfFood, BorderLayout.LINE_END);
 		
 		food = new JMenuBar();
@@ -73,7 +74,7 @@ public class CatPanel extends JPanel {
 		
 		//panel z statystykami kota
 		BarPanel = new JPanel();
-		BarPanel.setBackground(Color.PINK);
+		BarPanel.setBackground(backgroundColor);
 		
 		happiness = new JProgressBar(0,100);
 		happiness.setValue(50);
@@ -92,14 +93,14 @@ public class CatPanel extends JPanel {
 		//panel z obrazkiem kota
 		catImage = new JPanel();
 		Cat_png = new JLabel("Cat.PNG");
-		catImage.setBackground(Color.pink);
+		catImage.setBackground(backgroundColor);
 		
 		catImage.add(Cat_png);
 		centerPanel.add(catImage,BorderLayout.CENTER);
 		
 		//panel dolny z listą dostępnych potraw
 		foodPanel = new JPanel();
-		foodPanel.setBackground(Color.PINK);
+		foodPanel.setBackground(backgroundColor);
 		foodPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		this.add(foodPanel,BorderLayout.PAGE_END);
 		

@@ -17,7 +17,8 @@ import javax.swing.border.EmptyBorder;
 //ekran startowy gry
 public class MenuPanel extends JPanel{
 	private static final long serialVersionUID = 1L;
-	
+
+	private static final Color backgroundColor = new Color(255, 200, 251);
 	protected JButton start, exit, next;
 	private BoxLayout boxLayout;
 	private JPanel centerPanel, buttonPanel; 
@@ -28,9 +29,9 @@ public class MenuPanel extends JPanel{
 		
 		//panel srodkowy oraz panel z guzikami
 		centerPanel = new JPanel(new BorderLayout()); 
-		centerPanel.setBackground(Color.PINK);
+		centerPanel.setBackground(backgroundColor);
 		buttonPanel = new JPanel(new GridLayout(2,1,0,10));
-		buttonPanel.setBackground(Color.PINK);
+		buttonPanel.setBackground(backgroundColor);
 		
 		start = new JButton("START");
 		start.setActionCommand("start");
@@ -52,7 +53,7 @@ public class MenuPanel extends JPanel{
 		this.setBorder(new EmptyBorder(new Insets(100, 100, 100, 100)));
 		this.add(centerPanel);
 		
-		this.setBackground(Color.PINK);
+		this.setBackground(backgroundColor);
 	}
 
 }

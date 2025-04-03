@@ -14,6 +14,7 @@ import javax.swing.border.EmptyBorder;
 public class MainPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
+	private static final Color backgroundColor = new Color(255, 200, 251);
 	protected JButton backToMenuButton, catButton1, catButton2, catButton3, catButton4;
 	private JPanel upperPanel, centerPanel;
 	
@@ -22,11 +23,11 @@ public class MainPanel extends JPanel {
 		
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
-		this.setBackground(Color.PINK);
+		this.setBackground(backgroundColor);
 		
 		//panel z przyciskiem powrotu do ekranu startowego 
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		upperPanel.setBackground(Color.PINK);
+		upperPanel.setBackground(backgroundColor);
 		
 		backToMenuButton = new JButton("BACK");
 		backToMenuButton.setActionCommand("menu");
@@ -36,7 +37,7 @@ public class MainPanel extends JPanel {
 		
 		//panel z kotami
 		centerPanel = new JPanel();
-		centerPanel.setBackground(Color.PINK);
+		centerPanel.setBackground(backgroundColor);
 		
 		catButton1 = new JButton("cat1");
 		catButton1.setActionCommand("cat1");

@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Insets;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -29,7 +30,9 @@ public class MainPanel extends JPanel {
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		upperPanel.setBackground(backgroundColor);
 		
-		backToMenuButton = new JButton("BACK");
+		ImageIcon flower = new ImageIcon("src\\flower.png");
+		
+		backToMenuButton = new JButton(flower);
 		backToMenuButton.setActionCommand("menu");
 		
 		upperPanel.add(backToMenuButton);

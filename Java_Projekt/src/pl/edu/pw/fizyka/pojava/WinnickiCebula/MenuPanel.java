@@ -33,6 +33,7 @@ public class MenuPanel extends JPanel{
 		buttonPanel = new JPanel(new GridLayout(2,1,0,10));
 		buttonPanel.setBackground(backgroundColor);
 		
+		
 		start = new JButton("START");
 		start.setActionCommand("start");
 		exit = new JButton("EXIT");

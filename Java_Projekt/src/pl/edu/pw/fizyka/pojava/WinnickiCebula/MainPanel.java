@@ -30,9 +30,10 @@ public class MainPanel extends JPanel {
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		upperPanel.setBackground(backgroundColor);
 		
-		ImageIcon flower = new ImageIcon("src\\flower.png");
+		//ImageIcon backIcon = new ImageIcon("back.png");
 		
-		backToMenuButton = new JButton(flower);
+		//backToMenuButton = new JButton(backIcon);
+		backToMenuButton = new JButton("back");
 		backToMenuButton.setActionCommand("menu");
 		
 		upperPanel.add(backToMenuButton);

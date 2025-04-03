@@ -100,6 +100,7 @@ public class CatGame extends JFrame implements ActionListener {
 						}
 						catch (Exception e) {
 							System.out.print(isDefaultLookAndFeelDecorated());
+							e.printStackTrace();
 						}
 						CatGame frame = new CatGame("kitties");
 						frame.setSize(600,550);

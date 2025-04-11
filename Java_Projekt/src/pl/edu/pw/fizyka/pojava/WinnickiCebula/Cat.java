@@ -1,6 +1,9 @@
-//Autor: Szymon
 package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
+/*
+ * autor: Szymon
+ * klasa przechowująca informacje na temat kotów
+ */
 public class Cat {
 	
 	protected static final int maxHappiness = 100, maxFood = 100;

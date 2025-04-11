@@ -1,4 +1,3 @@
-//Autor: Marianna
 package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
 
@@ -14,7 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-//ekran startowy gry
+/* autor: Marianna
+ * ekran startowy gry
+ */
 public class MenuPanel extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);

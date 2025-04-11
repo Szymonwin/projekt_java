@@ -1,10 +1,8 @@
-//Autor: Marianna
 package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.Image;
 import java.awt.Insets;
 
 import javax.swing.ImageIcon;
@@ -12,7 +10,9 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-//ekran glowny, na ktorym bedzie mozna wybrac kota
+/* autor: Marianna
+ * panel główny gry
+ */
 public class MainPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);

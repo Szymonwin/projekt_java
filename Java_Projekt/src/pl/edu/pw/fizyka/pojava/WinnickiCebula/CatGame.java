@@ -1,4 +1,3 @@
-//Autor: Marianna
 package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
 import java.awt.CardLayout;
@@ -10,6 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+/* autorzy: Szymon, Marianna
+ * aplikacja gry
+ */
 public class CatGame extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	

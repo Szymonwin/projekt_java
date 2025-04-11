@@ -1,4 +1,3 @@
-//Autor: Marianna & Szymon
 package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
 import java.awt.BorderLayout;
@@ -16,7 +15,9 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.border.EmptyBorder;
 
-//ekran z pojedynczym kotem i jego statystykami
+/* autorzy: Szymon, Marianna
+ * Panel z widokiem kota
+ */
 public class CatPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);

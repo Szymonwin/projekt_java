@@ -1,6 +1,8 @@
-//Autor: Szymon
 package pl.edu.pw.fizyka.pojava.WinnickiCebula;
-//klasa przechowywująca informacje o jedzeniu
+
+/* autor: Szymon
+ * klasa przechowująca informacje na temat jedzenia
+ */
 public class Food {
 	
 	protected String name;

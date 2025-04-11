@@ -4,6 +4,7 @@ package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Image;
 import java.awt.Insets;
 
 import javax.swing.ImageIcon;
@@ -18,6 +19,7 @@ public class MainPanel extends JPanel {
 	
 	protected JButton backToMenuButton, catButton1, catButton2, catButton3, catButton4;
 	private JPanel upperPanel, centerPanel;
+	private ImageIcon backIcon;
 	
 	protected MainPanel(){
 		super();
@@ -30,10 +32,8 @@ public class MainPanel extends JPanel {
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		upperPanel.setBackground(backgroundColor);
 		
-		//ImageIcon backIcon = new ImageIcon("back.png");
-		
-		//backToMenuButton = new JButton(backIcon);
-		backToMenuButton = new JButton("back");
+		backIcon = new ImageIcon("back.png");
+		backToMenuButton = new JButton(backIcon);
 		backToMenuButton.setActionCommand("menu");
 		
 		upperPanel.add(backToMenuButton);

@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Insets;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -27,6 +28,7 @@ public class CatPanel extends JPanel {
 	private JMenu foodList;
 	private JMenuItem food1,food2,food3;
 	private JProgressBar happiness, hunger;
+	private ImageIcon backIcon;
 
 	protected CatPanel(String cat){
 		super();
@@ -41,9 +43,9 @@ public class CatPanel extends JPanel {
 		
 		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
 		
-		backToMainButton = new JButton("BACK");
+		backIcon = new ImageIcon("back.png");
+		backToMainButton = new JButton(backIcon);
 		backToMainButton.setActionCommand("backToMain");
-		backToMainButton.setBounds(15,15,60,15);
 		upperPanel.add(backToMainButton);
 		
 		catName = new JLabel(cat);

@@ -26,11 +26,21 @@ public class Cat {
 	public void feed(Food food) {
 		
 	}
-	
+	/**
+	 * metoda ustawiająca losowy ranking jedzenia
+	 * @return nic
+	 * @param nic
+	 * @author Szymon
+	 */
 	public void rankFood() {
 		
 	}
-	
+	/**
+	 * metoda zmieniająca imię kota
+	 * @param newName nowe imie
+	 * @return nic
+	 * @author Szymon
+	 */
 	public void rename(String newName) {
 		this.name = newName;
 	}

@@ -13,8 +13,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-/* autor: Marianna
+/**
  * ekran startowy gry
+ * 
+ * @author Marianka
  */
 public class MenuPanel extends JPanel{
 	private static final long serialVersionUID = 1L;

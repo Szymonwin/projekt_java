@@ -9,8 +9,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
-/* autorzy: Szymon, Marianna
+/**
  * aplikacja gry
+ * 
+ * @author Marianka
+ * @author Szymon
  */
 public class CatGame extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +32,7 @@ public class CatGame extends JFrame implements ActionListener {
 		cards = new JPanel(cardLayout);
 		this.add(cards);
 		
-		//tworzymy panele i dodajemy je do cards
+		//ogarnięcie CardLayoutu
 		menuPanel = new MenuPanel();
 		cards.add(menuPanel, "menu");
 		mainPanel = new MainPanel();
@@ -43,7 +46,7 @@ public class CatGame extends JFrame implements ActionListener {
 		catPanel4 = new CatPanel("cat4");
 		cards.add(catPanel4, "cp4");
 		
-		//dodajemy actionListener do wszystkich guzikow
+		//actionListener do wszystkich guzikow
 		menuPanel.start.addActionListener(this);
 		menuPanel.exit.addActionListener(this);
 		mainPanel.backToMenuButton.addActionListener(this);

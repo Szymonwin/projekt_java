@@ -1,7 +1,9 @@
 package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
-/* autor: Szymon
+/**
  * klasa przechowująca informacje na temat jedzenia
+ * 
+ * @author Szymon
  */
 public class Food {
 	

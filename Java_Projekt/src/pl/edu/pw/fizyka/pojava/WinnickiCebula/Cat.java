@@ -1,8 +1,9 @@
 package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
-/*
- * autor: Szymon
+/**
  * klasa przechowująca informacje na temat kotów
+ * 
+ * @author Szymon
  */
 public class Cat {
 	
@@ -15,6 +16,13 @@ public class Cat {
 		this.name = name;
 	}
 	
+	/**
+	 * metoda karmiąca kota, 
+	 * zmienia jego statystyki na podstawie podanego mu jedzenia
+	 * @param food 
+	 * @return nic
+	 * @author Szymon
+	 */
 	public void feed(Food food) {
 		
 	}

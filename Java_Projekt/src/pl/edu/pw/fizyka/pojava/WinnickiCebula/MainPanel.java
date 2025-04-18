@@ -10,8 +10,10 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-/* autor: Marianna
+/**
  * panel główny gry
+ * 
+ * @author Marianka
  */
 public class MainPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -28,7 +30,7 @@ public class MainPanel extends JPanel {
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
 		this.setBackground(backgroundColor);
 		
-		//panel z przyciskiem powrotu do ekranu startowego 
+		//panel górny z przyciskiem powrotu do ekranu startowego 
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		upperPanel.setBackground(backgroundColor);
 		
@@ -39,10 +41,11 @@ public class MainPanel extends JPanel {
 		upperPanel.add(backToMenuButton);
 		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
 		
-		//panel z kotami
+		//panel środkowy z kotami
 		centerPanel = new JPanel();
 		centerPanel.setBackground(backgroundColor);
 		
+		//guziki-koty
 		catButton1 = new JButton("cat1");
 		catButton1.setActionCommand("cat1");
 		catButton2 = new JButton("cat2");
@@ -56,6 +59,7 @@ public class MainPanel extends JPanel {
 		centerPanel.add(catButton2);
 		centerPanel.add(catButton3);
 		centerPanel.add(catButton4);
+		
 		this.add(centerPanel, BorderLayout.CENTER);
 	}
 	

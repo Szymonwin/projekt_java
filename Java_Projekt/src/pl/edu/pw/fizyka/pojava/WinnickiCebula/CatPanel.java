@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Insets;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -34,13 +35,15 @@ public class CatPanel extends JPanel {
 	private JMenuItem food1,food2,food3;
 	private JProgressBar happiness, hunger;
 	private ImageIcon backIcon;
+	private int BoxMesure = 200;
 
 	protected CatPanel(String cat){
 		super();
 		this.setBackground(backgroundColor);
 		
 		//panel górny z przyciskiem powrotu do MainPanel, imieniem kota oraz listą ulubionych potraw
-		upperPanel = new JPanel(new BoxLayout(upperPanel,BoxLayout.Y_AXIS));
+		upperPanel = new JPanel();
+		upperPanel.setLayout(new BoxLayout(upperPanel,BoxLayout.X_AXIS));
 		
 		upperPanel.setBackground(backgroundColor);
 		
@@ -53,9 +56,11 @@ public class CatPanel extends JPanel {
 		backToMainButton = new JButton(backIcon);
 		backToMainButton.setActionCommand("backToMain");
 		upperPanel.add(backToMainButton);
+		upperPanel.add(Box.createHorizontalStrut(BoxMesure));
 		
 		catNameLabel = new JLabel(cat);
 		upperPanel.add(catNameLabel);
+		upperPanel.add(Box.createHorizontalStrut(BoxMesure));
 		
 		//lista ulubionych potraw kota
 		listOfFood = new JPanel();

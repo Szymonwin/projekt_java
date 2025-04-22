@@ -38,7 +38,7 @@ public class CatPanel extends JPanel {
 		super();
 		this.setBackground(backgroundColor);
 		
-		//panel górny z przyciskiem powrotu do MainPanel i imieniem kota
+		//panel górny z przyciskiem powrotu do MainPanel, imieniem kota oraz listą ulubionych potraw
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		upperPanel.setBackground(backgroundColor);
 		
@@ -71,7 +71,7 @@ public class CatPanel extends JPanel {
 		foodList.add(food3);
 		
 		food.add(foodList);
-		listOfFood.add(food);
+		upperPanel.add(food);
 		
 		//panel środkowy z obrazkiem kota oraz jego statystykami
 		centerPanel = new JPanel();

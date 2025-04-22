@@ -28,7 +28,7 @@ public class CatPanel extends JPanel {
 	private static final Color backgroundColor = new Color(255, 200, 251);
 	
 	protected JButton backToMainButton, foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
-	private JPanel upperPanel, listOfFood, barPanel, centerPanel, catImagePanel, foodPanel;
+	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel;
 	private JLabel catNameLabel, CatpngLabel, happinessLabel,hungryLabel;
 	private JMenuBar food;
 	private JMenu foodList;
@@ -40,33 +40,29 @@ public class CatPanel extends JPanel {
 	protected CatPanel(String cat){
 		super();
 		this.setBackground(backgroundColor);
+		this.setLayout(new BorderLayout());
+		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
 		
 		//panel górny z przyciskiem powrotu do MainPanel, imieniem kota oraz listą ulubionych potraw
 		upperPanel = new JPanel();
 		upperPanel.setLayout(new BoxLayout(upperPanel,BoxLayout.X_AXIS));
-		
 		upperPanel.setBackground(backgroundColor);
-		
-		this.setLayout(new BorderLayout());
-		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
 		
 		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
 		
+		//przycisk powrotu
 		backIcon = new ImageIcon("back.png");
 		backToMainButton = new JButton(backIcon);
 		backToMainButton.setActionCommand("backToMain");
 		upperPanel.add(backToMainButton);
 		upperPanel.add(Box.createHorizontalStrut(BoxMesure));
 		
+		//imię kota
 		catNameLabel = new JLabel(cat);
 		upperPanel.add(catNameLabel);
 		upperPanel.add(Box.createHorizontalStrut(BoxMesure));
 		
 		//lista ulubionych potraw kota
-		listOfFood = new JPanel();
-		listOfFood.setBackground(backgroundColor);
-		this.add(listOfFood, BorderLayout.LINE_END);
-		
 		food = new JMenuBar();
 		foodList = new JMenu("lista potraw");
 		food1 = new JMenuItem("1");
@@ -76,7 +72,6 @@ public class CatPanel extends JPanel {
 		foodList.add(food1);
 		foodList.add(food2);
 		foodList.add(food3);
-		
 		food.add(foodList);
 		upperPanel.add(food);
 		

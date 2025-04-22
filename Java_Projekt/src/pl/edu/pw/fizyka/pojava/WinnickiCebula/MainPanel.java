@@ -27,7 +27,7 @@ public class MainPanel extends JPanel {
 		super();
 		
 		this.setLayout(new BorderLayout());
-		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
+		this.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
 		this.setBackground(backgroundColor);
 		
 		//panel górny z przyciskiem powrotu do ekranu startowego 

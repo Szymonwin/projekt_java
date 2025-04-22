@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Insets;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -39,7 +40,8 @@ public class CatPanel extends JPanel {
 		this.setBackground(backgroundColor);
 		
 		//panel górny z przyciskiem powrotu do MainPanel, imieniem kota oraz listą ulubionych potraw
-		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		upperPanel = new JPanel(new BoxLayout(upperPanel,BoxLayout.Y_AXIS));
+		
 		upperPanel.setBackground(backgroundColor);
 		
 		this.setLayout(new BorderLayout());

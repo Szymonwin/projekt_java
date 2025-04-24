@@ -30,7 +30,7 @@ public class CatPanel extends JPanel {
 	protected JButton backToMainButton, foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
 	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel;
 	private JLabel catNameLabel, CatpngLabel, happinessLabel,hungryLabel;
-	private JMenuBar food;
+	private JMenuBar foodMenu;
 	private JMenu foodList;
 	private JMenuItem food1,food2,food3;
 	private JProgressBar happiness, hunger;
@@ -63,7 +63,7 @@ public class CatPanel extends JPanel {
 		upperPanel.add(Box.createHorizontalStrut(BoxMesure));
 		
 		//lista ulubionych potraw kota
-		food = new JMenuBar();
+		foodMenu = new JMenuBar();
 		foodList = new JMenu("lista potraw");
 		food1 = new JMenuItem("1");
 		food2 = new JMenuItem("2");
@@ -72,8 +72,8 @@ public class CatPanel extends JPanel {
 		foodList.add(food1);
 		foodList.add(food2);
 		foodList.add(food3);
-		food.add(foodList);
-		upperPanel.add(food);
+		foodMenu.add(foodList);
+		upperPanel.add(foodMenu);
 		
 		//panel środkowy z obrazkiem kota oraz jego statystykami
 		centerPanel = new JPanel();

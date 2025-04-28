@@ -16,11 +16,16 @@ import javax.swing.UIManager;
  * @author Szymon
  */
 public class CatGame extends JFrame implements ActionListener {
+	
 	private static final long serialVersionUID = 1L;
+	private static final String[] catNames = {"stefan", "mordka", "syczek", "hela"};
+	private static final String[] foodNames = {"Food1", "Food2", "Food3", "Food4", "Food5", "Food6"};
 	
 	private JPanel cards;
 	private MainPanel mainPanel;
 	private MenuPanel menuPanel;
+	private Cat cat1, cat2, cat3, cat4;
+	//private Food food1, food2, food3, food4, food5, food6;
 	private CatPanel catPanel1, catPanel2, catPanel3, catPanel4;
 	private String command;
 	private CardLayout cardLayout;
@@ -32,18 +37,30 @@ public class CatGame extends JFrame implements ActionListener {
 		cards = new JPanel(cardLayout);
 		this.add(cards);
 		
+		cat1 = new Cat(catNames[0]);
+		cat2 = new Cat(catNames[1]);
+		cat3 = new Cat(catNames[2]);
+		cat4 = new Cat(catNames[3]);
+		
+		/*food1 = new Food(foodNames[1],5);
+		food2 = new Food(foodNames[2],5);
+		food3 = new Food(foodNames[3],5);
+		food4 = new Food(foodNames[4],5);
+		food5 = new Food(foodNames[5],5);
+		food6 = new Food(foodNames[6],5);*/
+		
 		//ogarnięcie CardLayoutu
 		menuPanel = new MenuPanel();
 		cards.add(menuPanel, "menu");
 		mainPanel = new MainPanel();
 		cards.add(mainPanel, "main");
-		catPanel1 = new CatPanel("cat1");
+		catPanel1 = new CatPanel(cat1);
 		cards.add(catPanel1, "cp1");
-		catPanel2 = new CatPanel("cat2");
+		catPanel2 = new CatPanel(cat2);
 		cards.add(catPanel2, "cp2");
-		catPanel3 = new CatPanel("cat3");
+		catPanel3 = new CatPanel(cat3);
 		cards.add(catPanel3, "cp3");
-		catPanel4 = new CatPanel("cat4");
+		catPanel4 = new CatPanel(cat4);
 		cards.add(catPanel4, "cp4");
 		
 		//actionListener do wszystkich guzikow

@@ -76,6 +76,7 @@ public class CatGame extends JFrame implements ActionListener {
 		catPanel3.backToMainButton.addActionListener(this);
 		catPanel4.backToMainButton.addActionListener(this);
 		
+		
 		cardLayout.show(cards, "menu");
 	}
 	

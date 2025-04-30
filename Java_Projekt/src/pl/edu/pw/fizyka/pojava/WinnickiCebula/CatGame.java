@@ -4,6 +4,7 @@ import java.awt.CardLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -25,10 +26,11 @@ public class CatGame extends JFrame implements ActionListener {
 	private MainPanel mainPanel;
 	private MenuPanel menuPanel;
 	private Cat cat1, cat2, cat3, cat4;
-	//private Food food1, food2, food3, food4, food5, food6;
+	private Food food1, food2, food3, food4, food5, food6;
 	private CatPanel catPanel1, catPanel2, catPanel3, catPanel4;
 	private String command;
 	private CardLayout cardLayout;
+	//private ArrayList<Food> listOfFood;
 	
 	public CatGame(String title) {
 		super(title);
@@ -37,17 +39,25 @@ public class CatGame extends JFrame implements ActionListener {
 		cards = new JPanel(cardLayout);
 		this.add(cards);
 		
+		/*food1 = new Food(foodNames[0], 5);
+		food2 = new Food(foodNames[1], 5);
+		food3 = new Food(foodNames[2], 5);
+		food4 = new Food(foodNames[3], 5);
+		food5 = new Food(foodNames[4], 5);
+		food6 = new Food(foodNames[5], 5);
+		
+		listOfFood = new ArrayList<Food>();
+		listOfFood.add(food1);
+		listOfFood.add(food2);
+		listOfFood.add(food3);
+		listOfFood.add(food4);
+		listOfFood.add(food5);
+		listOfFood.add(food6);*/
+		
 		cat1 = new Cat(catNames[0]);
 		cat2 = new Cat(catNames[1]);
 		cat3 = new Cat(catNames[2]);
 		cat4 = new Cat(catNames[3]);
-		
-		/*food1 = new Food(foodNames[1],5);
-		food2 = new Food(foodNames[2],5);
-		food3 = new Food(foodNames[3],5);
-		food4 = new Food(foodNames[4],5);
-		food5 = new Food(foodNames[5],5);
-		food6 = new Food(foodNames[6],5);*/
 		
 		//ogarnięcie CardLayoutu
 		menuPanel = new MenuPanel();
@@ -75,7 +85,6 @@ public class CatGame extends JFrame implements ActionListener {
 		catPanel2.backToMainButton.addActionListener(this);
 		catPanel3.backToMainButton.addActionListener(this);
 		catPanel4.backToMainButton.addActionListener(this);
-		
 		
 		cardLayout.show(cards, "menu");
 	}

@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -45,6 +46,7 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 	private JProgressBar happinessBar, hungerBar;
 	private ImageIcon backIcon;
 	private Cat cat;
+	private ArrayList<Food> listOfFood;
 
 	protected CatPanel(Cat cat){
 		super();
@@ -60,6 +62,16 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		food4 = new Food(foodNames[3],5);
 		food5 = new Food(foodNames[4],5);
 		food6 = new Food(foodNames[5],5);
+		
+		listOfFood = new ArrayList<Food>();
+		listOfFood.add(food1);
+		listOfFood.add(food2);
+		listOfFood.add(food3);
+		listOfFood.add(food4);
+		listOfFood.add(food5);
+		listOfFood.add(food6);
+		
+		cat.rankFood(listOfFood);
 		
 		//panel górny z przyciskiem powrotu do MainPanel, imieniem kota oraz listą ulubionych potraw
 		upperPanel = new JPanel();
@@ -105,12 +117,12 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		barPanel.setBackground(backgroundColor);
 		
 		happinessBar = new JProgressBar(0,100);
-		happinessBar.setValue(50);
+		happinessBar.setValue(cat.levelOfHappiness);
 		hungerBar = new JProgressBar(0,100);
-		hungerBar.setValue(20);
+		hungerBar.setValue(cat.levelOfHunger);
 		barPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		happinessLabel = new JLabel("Happiness");
-		hungryLabel = new JLabel("Hungry");
+		hungryLabel = new JLabel("Hunger");
 		
 		barPanel.add(happinessLabel);
 		barPanel.add(happinessBar);
@@ -173,26 +185,32 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		case "Food1":
 			cat.feed(food1);
 			hungerBar.setValue(cat.levelOfHunger);
+			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		case "Food2":
 			cat.feed(food2);
 			hungerBar.setValue(cat.levelOfHunger);
+			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		case "Food3":
 			cat.feed(food3);
 			hungerBar.setValue(cat.levelOfHunger);
+			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		case "Food4":
 			cat.feed(food4);
 			hungerBar.setValue(cat.levelOfHunger);
+			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		case "Food5":
 			cat.feed(food5);
 			hungerBar.setValue(cat.levelOfHunger);
+			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		case "Food6":
 			cat.feed(food6);
 			hungerBar.setValue(cat.levelOfHunger);
+			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		}
 		

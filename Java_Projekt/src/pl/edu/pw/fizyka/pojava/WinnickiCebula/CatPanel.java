@@ -218,9 +218,16 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		String newName = JOptionPane.showInputDialog("Enter new name:");
+		String newName = JOptionPane.showInputDialog(null,"Enter new name:", cat.name, JOptionPane.QUESTION_MESSAGE);
+		if(newName == null) {
+			return;
+		}
+		else if(newName.trim().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
+		}else {
 		cat.rename(newName);
 		catNameLabel.setText(newName);
+		}
 	}
 
 	@Override

@@ -42,7 +42,7 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 	private JMenuBar foodMenuBar;
 	private Food food1, food2, food3, food4, food5, food6;
 	private JMenu foodListMenu;
-	private JMenuItem foodRanked1,foodRanked2,foodRanked3;
+	private JMenuItem foodRanked1,foodRanked2,foodRanked3,foodRanked4,foodRanked5,foodRanked6;
 	private JProgressBar happinessBar, hungerBar;
 	private ImageIcon backIcon;
 	private Cat cat;
@@ -97,13 +97,19 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		//lista ulubionych potraw kota
 		foodMenuBar = new JMenuBar();
 		foodListMenu = new JMenu("lista potraw");
-		foodRanked1 = new JMenuItem("1");
-		foodRanked2 = new JMenuItem("2");
-		foodRanked3 = new JMenuItem("3");
+		foodRanked1 = new JMenuItem("1 "+listOfFood.get(0).name);
+		foodRanked2 = new JMenuItem("2 "+listOfFood.get(1).name);
+		foodRanked3 = new JMenuItem("3 "+listOfFood.get(2).name);
+		foodRanked4 = new JMenuItem("4 "+listOfFood.get(3).name);
+		foodRanked5 = new JMenuItem("5 "+listOfFood.get(4).name);
+		foodRanked6 = new JMenuItem("6 "+listOfFood.get(5).name);
 		
 		foodListMenu.add(foodRanked1);
 		foodListMenu.add(foodRanked2);
 		foodListMenu.add(foodRanked3);
+		foodListMenu.add(foodRanked4);
+		foodListMenu.add(foodRanked5);
+		foodListMenu.add(foodRanked6);
 		foodMenuBar.add(foodListMenu);
 		upperPanel.add(foodMenuBar);
 		
@@ -218,9 +224,16 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		String newName = JOptionPane.showInputDialog("Enter new name:");
+		String newName = JOptionPane.showInputDialog(null,"Enter new name:", cat.name, JOptionPane.QUESTION_MESSAGE);
+		if(newName == null) {
+			return;
+		}
+		else if(newName.trim().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
+		}else {
 		cat.rename(newName);
 		catNameLabel.setText(newName);
+		}
 	}
 
 	@Override

@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -21,7 +20,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
-import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 /**
@@ -37,7 +35,8 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 	private static final int BoxMeasure = 200;
 	private static final String[] foodNames = {"Food1", "Food2", "Food3", "Food4", "Food5", "Food6"};
 	
-	protected JButton backToMainButton, foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
+	protected JButton foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
+	protected IconButton backToMainButton;
 	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel;
 	private JLabel catNameLabel, CatpngLabel, happinessLabel,hungryLabel;
 	private JMenuBar foodMenuBar;
@@ -45,7 +44,6 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 	private JMenu foodListMenu;
 	private JMenuItem foodRanked1,foodRanked2,foodRanked3,foodRanked4,foodRanked5,foodRanked6;
 	private JProgressBar happinessBar, hungerBar;
-	private ImageIcon backIcon;
 	private Cat cat;
 	private ArrayList<Food> listOfFood;
 
@@ -82,9 +80,7 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
 		
 		//przycisk powrotu
-		backIcon = new ImageIcon("back.png");
-		backToMainButton = new JButton(backIcon);
-		backToMainButton.setActionCommand("backToMain");
+		backToMainButton = new IconButton("guzik.png", 50, 50, "backToMain");
 		upperPanel.add(backToMainButton);
 		upperPanel.add(Box.createHorizontalStrut(BoxMeasure));
 		

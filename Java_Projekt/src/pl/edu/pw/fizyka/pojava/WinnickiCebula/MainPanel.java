@@ -3,8 +3,8 @@ package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Image;
 import java.awt.Insets;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -19,9 +19,9 @@ public class MainPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);
 	
-	protected JButton backToMenuButton, catButton1, catButton2, catButton3, catButton4;
+	protected JButton catButton1, catButton2, catButton3, catButton4;
+	protected IconButton backToMenuButton;
 	private JPanel upperPanel, centerPanel;
-	private ImageIcon backIcon;
 	
 	protected MainPanel(){
 		super();
@@ -34,11 +34,9 @@ public class MainPanel extends JPanel {
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		upperPanel.setBackground(backgroundColor);
 		
-		backIcon = new ImageIcon("back.png");
-		backToMenuButton = new JButton(backIcon);
-		backToMenuButton.setActionCommand("menu");
-		
+		backToMenuButton = new IconButton("guzik.png", 50, 50, "menu");
 		upperPanel.add(backToMenuButton);
+		
 		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
 		
 		//panel środkowy z kotami

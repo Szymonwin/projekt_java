@@ -30,6 +30,7 @@ public class IconButton extends JButton {
 		this.setActionCommand(command);
 		this.setBackground(null);
 		this.setBorder(null);
+		//lalala
 	}
 	
 	/*

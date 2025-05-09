@@ -53,23 +53,23 @@ public class CatGame extends JFrame implements ActionListener {
 		listOfFood.add(food5);
 		listOfFood.add(food6);*/
 		
-		cat1 = new Cat(catNames[0]);
+		/*cat1 = new Cat(catNames[0]);
 		cat2 = new Cat(catNames[1]);
 		cat3 = new Cat(catNames[2]);
-		cat4 = new Cat(catNames[3]);
+		cat4 = new Cat(catNames[3]);*/
 		
 		//ogarnięcie CardLayoutu
 		menuPanel = new MenuPanel();
 		cards.add(menuPanel, "menu");
 		mainPanel = new MainPanel();
 		cards.add(mainPanel, "main");
-		catPanel1 = new CatPanel(cat1);
+		catPanel1 = new CatPanel("Stefan");
 		cards.add(catPanel1, "cp1");
-		catPanel2 = new CatPanel(cat2);
+		catPanel2 = new CatPanel("Mordka");
 		cards.add(catPanel2, "cp2");
-		catPanel3 = new CatPanel(cat3);
+		catPanel3 = new CatPanel("Syczek");
 		cards.add(catPanel3, "cp3");
-		catPanel4 = new CatPanel(cat4);
+		catPanel4 = new CatPanel("Hela");
 		cards.add(catPanel4, "cp4");
 		
 		//actionListener do wszystkich guzikow
@@ -135,7 +135,7 @@ public class CatGame extends JFrame implements ActionListener {
 							e.printStackTrace();
 						}
 						CatGame frame = new CatGame("kitties");
-						frame.setSize(600,550);
+						frame.setSize(800,700);
 						frame.setVisible(true);
 						frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 					}

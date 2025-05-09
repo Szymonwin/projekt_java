@@ -3,9 +3,7 @@ package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.Image;
 import java.awt.Insets;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -19,7 +17,8 @@ public class MainPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);
 	
-	protected JButton catButton1, catButton2, catButton3, catButton4;
+	protected JButton catButton2, catButton3, catButton4;
+	protected IconButton catButton1;
 	protected IconButton backToMenuButton;
 	private JPanel upperPanel, centerPanel;
 	
@@ -44,8 +43,9 @@ public class MainPanel extends JPanel {
 		centerPanel.setBackground(backgroundColor);
 		
 		//guziki-koty
-		catButton1 = new JButton("cat1");
-		catButton1.setActionCommand("cat1");
+		catButton1 = new IconButton("stefan.png", 150, 200, "cat1");
+		
+		
 		catButton2 = new JButton("cat2");
 		catButton2.setActionCommand("cat2");
 		catButton3 = new JButton("cat3");

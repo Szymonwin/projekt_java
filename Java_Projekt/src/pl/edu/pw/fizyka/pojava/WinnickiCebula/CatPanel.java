@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -33,10 +32,9 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);
 	private static final int BoxMeasure = 200;
-	private static final String[] foodNames = {"Food1", "Food2", "Food3", "Food4", "Food5", "Food6"};
+	private static final String[] foodNames = {"Fish", "Chicken", "Carrot", "Milk", "Muffin", "Cake"};
 	
-	protected JButton foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
-	protected IconButton backToMainButton;
+	protected IconButton backToMainButton,foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
 	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel;
 	private JLabel catNameLabel, CatpngLabel, happinessLabel,hungryLabel;
 	private JMenuBar foodMenuBar;
@@ -47,13 +45,13 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 	private Cat cat;
 	private ArrayList<Food> listOfFood;
 
-	protected CatPanel(Cat cat){
+	protected CatPanel(String catName){
 		super();
 		this.setBackground(backgroundColor);
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
 		
-		this.cat = cat;
+		cat = new Cat(catName);
 		
 		food1 = new Food(foodNames[0],20);
 		food2 = new Food(foodNames[1],5);
@@ -147,37 +145,37 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		foodPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		this.add(foodPanel,BorderLayout.PAGE_END);
 		
-		foodButton1 = new JButton(foodNames[0]);
+		foodButton1 = new IconButton("fish.png", 150, 100, foodNames[0]);
 		foodButton1.setToolTipText(foodNames[0]);
-		foodButton1.setActionCommand(foodNames[0]);
 		foodButton1.addActionListener(this);
-		foodButton2 = new JButton(foodNames[1]);
+		
+		foodButton2 = new IconButton("chicken.png", 100, 100, foodNames[1]);
 		foodButton2.setToolTipText(foodNames[1]);
-		foodButton2.setActionCommand(foodNames[1]);
 		foodButton2.addActionListener(this);
-		foodButton3 = new JButton(foodNames[2]);
+		
+		foodButton3 = new IconButton("carrot.png", 100, 100, foodNames[2]);
 		foodButton3.setToolTipText(foodNames[2]);
-		foodButton3.setActionCommand(foodNames[2]);
 		foodButton3.addActionListener(this);
-		foodButton4 = new JButton(foodNames[3]);
+		
+		foodButton4 = new IconButton("milk.png", 130, 100, foodNames[3]);
 		foodButton4.setToolTipText(foodNames[3]);
-		foodButton4.setActionCommand(foodNames[3]);
 		foodButton4.addActionListener(this);
-		foodButton5 = new JButton(foodNames[4]);
+		
+		foodButton5 = new IconButton("muffin.png", 100, 100, foodNames[4]);
 		foodButton5.setToolTipText(foodNames[4]);
-		foodButton5.setActionCommand(foodNames[4]);
 		foodButton5.addActionListener(this);
-		foodButton6 = new JButton(foodNames[5]);
+
+		foodButton6 = new IconButton("cake.png", 90, 100, foodNames[5]);
 		foodButton6.setToolTipText(foodNames[5]);
-		foodButton6.setActionCommand(foodNames[5]);
 		foodButton6.addActionListener(this);
+		
 		
 		foodPanel.add(foodButton1);
 		foodPanel.add(foodButton2);
 		foodPanel.add(foodButton3);
 		foodPanel.add(foodButton4);
 		foodPanel.add(foodButton5);
-		foodPanel.add(foodButton6);
+		foodPanel.add(foodButton6); 
 	}
 
 	@Override
@@ -185,7 +183,7 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		String command = e.getActionCommand();
 		
 		switch(command){
-		case "Food1":
+		case "Fish":
 			try {
 				cat.feed(food1);
 			}catch(TooMuchFoodException ex) {
@@ -196,7 +194,7 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
-		case "Food2":
+		case "Chicken":
 			try {
 				cat.feed(food2);
 			}catch(TooMuchFoodException ex) {
@@ -207,7 +205,7 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
-		case "Food3":
+		case "Carrot":
 			try {
 				cat.feed(food3);
 			}catch(TooMuchFoodException ex) {
@@ -218,7 +216,7 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
-		case "Food4":
+		case "Milk":
 			try {
 				cat.feed(food4);
 			}catch(TooMuchFoodException ex) {
@@ -229,7 +227,7 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
-		case "Food5":
+		case "Muffin":
 			try {
 				cat.feed(food5);
 			}catch(TooMuchFoodException ex) {
@@ -240,7 +238,7 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
-		case "Food6":
+		case "Cake":
 			try {
 				cat.feed(food6);
 			}catch(TooMuchFoodException ex) {

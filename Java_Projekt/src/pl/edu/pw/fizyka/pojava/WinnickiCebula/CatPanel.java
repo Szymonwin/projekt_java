@@ -189,32 +189,68 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		
 		switch(command){
 		case "Food1":
-			cat.feed(food1);
+			try {
+				cat.feed(food1);
+			}catch(TooMuchFoodException ex) {
+				System.out.println("catch food");
+			}catch(TooMuchHappinessException exp) {
+				System.out.println("catch Happiness");
+			}
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		case "Food2":
-			cat.feed(food2);
+			try {
+				cat.feed(food2);
+			}catch(TooMuchFoodException ex) {
+				System.out.println("catch food");
+			}catch(TooMuchHappinessException exp) {
+				System.out.println("catch Happiness");
+			}
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		case "Food3":
-			cat.feed(food3);
+			try {
+				cat.feed(food3);
+			}catch(TooMuchFoodException ex) {
+				System.out.println("catch food");
+			}catch(TooMuchHappinessException exp) {
+				System.out.println("catch Happiness");
+			}
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		case "Food4":
-			cat.feed(food4);
+			try {
+				cat.feed(food4);
+			}catch(TooMuchFoodException ex) {
+				System.out.println("catch food");
+			}catch(TooMuchHappinessException exp) {
+				System.out.println("catch Happiness");
+			}
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		case "Food5":
-			cat.feed(food5);
+			try {
+				cat.feed(food5);
+			}catch(TooMuchFoodException ex) {
+				System.out.println("catch food");
+			}catch(TooMuchHappinessException exp) {
+				System.out.println("catch Happiness");
+			}
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		case "Food6":
-			cat.feed(food6);
+			try {
+				cat.feed(food6);
+			}catch(TooMuchFoodException ex) {
+				System.out.println("catch food");
+			}catch(TooMuchHappinessException exp) {
+				System.out.println("catch Happiness");
+			}
 			hungerBar.setValue(cat.levelOfHunger);
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;

@@ -4,7 +4,6 @@ import java.awt.CardLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -20,13 +19,13 @@ public class CatGame extends JFrame implements ActionListener {
 	
 	private static final long serialVersionUID = 1L;
 	private static final String[] catNames = {"stefan", "mordka", "syczek", "hela"};
-	private static final String[] foodNames = {"Food1", "Food2", "Food3", "Food4", "Food5", "Food6"};
+	//private static final String[] foodNames = {"Food1", "Food2", "Food3", "Food4", "Food5", "Food6"};
 	
 	private JPanel cards;
 	private MainPanel mainPanel;
 	private MenuPanel menuPanel;
 	private Cat cat1, cat2, cat3, cat4;
-	private Food food1, food2, food3, food4, food5, food6;
+	//private Food food1, food2, food3, food4, food5, food6;
 	private CatPanel catPanel1, catPanel2, catPanel3, catPanel4;
 	private String command;
 	private CardLayout cardLayout;

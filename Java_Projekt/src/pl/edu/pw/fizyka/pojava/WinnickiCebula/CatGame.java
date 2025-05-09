@@ -127,7 +127,8 @@ public class CatGame extends JFrame implements ActionListener {
 				new Runnable(){
 					public void run() {
 						try {
-							UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+							//System.out.println(UIManager.getSystemLookAndFeelClassName());
+							UIManager.setLookAndFeel("com.apple.laf.AquaLookAndFeel");
 						}
 						catch (Exception e) {
 							System.out.print(isDefaultLookAndFeelDecorated());

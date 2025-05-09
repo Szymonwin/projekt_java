@@ -21,6 +21,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 /**
@@ -260,6 +261,7 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		
 		String newName = JOptionPane.showInputDialog(null,"Enter new name:", cat.name, JOptionPane.QUESTION_MESSAGE);
 		if(newName == null) {
 			return;

@@ -24,7 +24,6 @@ public class CatGame extends JFrame implements ActionListener {
 	private JPanel cards;
 	private MainPanel mainPanel;
 	private MenuPanel menuPanel;
-	private Cat cat1, cat2, cat3, cat4;
 	//private Food food1, food2, food3, food4, food5, food6;
 	private CatPanel catPanel1, catPanel2, catPanel3, catPanel4;
 	private String command;
@@ -63,13 +62,13 @@ public class CatGame extends JFrame implements ActionListener {
 		cards.add(menuPanel, "menu");
 		mainPanel = new MainPanel();
 		cards.add(mainPanel, "main");
-		catPanel1 = new CatPanel("Stefan");
+		catPanel1 = new CatPanel(catNames[0]);
 		cards.add(catPanel1, "cp1");
-		catPanel2 = new CatPanel("Mordka");
+		catPanel2 = new CatPanel(catNames[1]);
 		cards.add(catPanel2, "cp2");
-		catPanel3 = new CatPanel("Syczek");
+		catPanel3 = new CatPanel(catNames[2]);
 		cards.add(catPanel3, "cp3");
-		catPanel4 = new CatPanel("Hela");
+		catPanel4 = new CatPanel(catNames[3]);
 		cards.add(catPanel4, "cp4");
 		
 		//actionListener do wszystkich guzikow

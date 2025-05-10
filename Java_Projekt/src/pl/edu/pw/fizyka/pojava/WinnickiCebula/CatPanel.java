@@ -3,6 +3,8 @@ package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,8 +12,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -31,11 +31,10 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 	
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);
-	private static final int BoxMeasure = 200;
 	private static final String[] foodNames = {"Fish", "Chicken", "Carrot", "Milk", "Muffin", "Cake"};
 	
 	protected IconButton backToMainButton,foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
-	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel;
+	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel, foodListPanel, namePanel, backButtonPanel;
 	private JLabel catNameLabel, CatpngLabel, happinessLabel,hungryLabel;
 	private JMenuBar foodMenuBar;
 	private Food food1, food2, food3, food4, food5, food6;
@@ -72,32 +71,40 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		
 		//panel górny z przyciskiem powrotu do MainPanel, imieniem kota oraz listą ulubionych potraw
 		upperPanel = new JPanel();
-		upperPanel.setLayout(new BoxLayout(upperPanel,BoxLayout.X_AXIS));
+		upperPanel.setLayout(new GridLayout());
 		upperPanel.setBackground(backgroundColor);
 		
 		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
 		
 		//przycisk powrotu
 		backToMainButton = new IconButton("guzik.png", 50, 50, "backToMain");
-		upperPanel.add(backToMainButton);
-		upperPanel.add(Box.createHorizontalStrut(BoxMeasure));
+		backButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		backButtonPanel.setBackground(backgroundColor);
+		backButtonPanel.add(backToMainButton);
+		upperPanel.add(backButtonPanel);
+		
 		
 		//imię kota
 		catNameLabel = new JLabel(cat.name);
+		catNameLabel.setFont(new Font("Helvetica", Font.BOLD, 40));
+		namePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+		namePanel.setBackground(backgroundColor);
 		catNameLabel.setToolTipText("click to change name");
 		catNameLabel.addMouseListener(this);
-		upperPanel.add(catNameLabel);
-		upperPanel.add(Box.createHorizontalStrut(BoxMeasure));
+		namePanel.add(catNameLabel);
+		upperPanel.add(namePanel);
 		
 		//lista ulubionych potraw kota
 		foodMenuBar = new JMenuBar();
-		foodListMenu = new JMenu("lista potraw");
+		foodListMenu = new JMenu("Favourite foods");
 		foodRanked1 = new JMenuItem("1 "+listOfFood.get(0).name);
 		foodRanked2 = new JMenuItem("2 "+listOfFood.get(1).name);
 		foodRanked3 = new JMenuItem("3 "+listOfFood.get(2).name);
 		foodRanked4 = new JMenuItem("4 "+listOfFood.get(3).name);
 		foodRanked5 = new JMenuItem("5 "+listOfFood.get(4).name);
 		foodRanked6 = new JMenuItem("6 "+listOfFood.get(5).name);
+		foodListPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+		foodListPanel.setBackground(backgroundColor);
 		
 		foodListMenu.add(foodRanked1);
 		foodListMenu.add(foodRanked2);
@@ -106,7 +113,8 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		foodListMenu.add(foodRanked5);
 		foodListMenu.add(foodRanked6);
 		foodMenuBar.add(foodListMenu);
-		upperPanel.add(foodMenuBar);
+		foodListPanel.add(foodMenuBar);
+		upperPanel.add(foodListPanel);
 		
 		//panel środkowy z obrazkiem kota oraz jego statystykami
 		centerPanel = new JPanel();

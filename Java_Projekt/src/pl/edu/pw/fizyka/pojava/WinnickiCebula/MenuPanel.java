@@ -3,11 +3,14 @@ package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.Insets;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -24,8 +27,9 @@ public class MenuPanel extends JPanel{
 	
 	protected JButton start, exit, next;
 	private BoxLayout boxLayout;
-	private JPanel centerPanel, buttonPanel; 
+	private JPanel centerPanel, buttonPanel, titlePanel; 
 	private JLabel label;
+	private ImageIcon miniCat,newIcon;
 	
 	protected MenuPanel() {
 		super();
@@ -35,7 +39,8 @@ public class MenuPanel extends JPanel{
 		centerPanel.setBackground(backgroundColor);
 		buttonPanel = new JPanel(new GridLayout(2,1,0,10));
 		buttonPanel.setBackground(backgroundColor);
-		
+		titlePanel = new JPanel(new FlowLayout());
+		titlePanel.setBackground(backgroundColor);
 		
 		start = new JButton("START");
 		start.setActionCommand("start");
@@ -47,8 +52,16 @@ public class MenuPanel extends JPanel{
 		
 		label = new JLabel("Gra o kotach");
 		label.setFont(new Font("Helvetica", Font.BOLD, 20));
+		newIcon = new ImageIcon("minicat.png");
+		Image img = newIcon.getImage();
+		Image newImg = img.getScaledInstance( (int)( newIcon.getIconWidth() * 0.07 ), (int)( newIcon.getIconHeight() * 0.07 ), Image.SCALE_SMOOTH);
+		miniCat = new ImageIcon(newImg);
 		
-		centerPanel.add(label, BorderLayout.PAGE_START);
+		titlePanel.add(new JLabel(miniCat));
+		titlePanel.add(label);
+		
+		
+		centerPanel.add(titlePanel, BorderLayout.PAGE_START);
 		centerPanel.add(buttonPanel, BorderLayout.CENTER);
 		
 		//walory estetyczne

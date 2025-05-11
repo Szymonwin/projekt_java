@@ -2,9 +2,11 @@ package pl.edu.pw.fizyka.pojava.WinnickiCebula;
 
 import java.awt.CardLayout;
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -28,6 +30,7 @@ public class CatGame extends JFrame implements ActionListener {
 	private CatPanel catPanel1, catPanel2, catPanel3, catPanel4;
 	private String command;
 	private CardLayout cardLayout;
+	private ImageIcon miniCat, newIcon;
 	
 	public CatGame(String title) {
 		super(title);
@@ -77,6 +80,11 @@ public class CatGame extends JFrame implements ActionListener {
 		mainPanel.catButton4.setToolTipText(catNames[3]);
 		
 		cardLayout.show(cards, "menu");
+		
+		newIcon = new ImageIcon("minicat.png");
+		Image img = newIcon.getImage();
+		Image newImg = img.getScaledInstance( (int)( newIcon.getIconWidth() * 0.07 ), (int)( newIcon.getIconHeight() * 0.07 ), Image.SCALE_SMOOTH);
+		miniCat = new ImageIcon(newImg);
 	}
 	
 	//funckja onslugujaca wszystkie guziki w programie
@@ -110,12 +118,12 @@ public class CatGame extends JFrame implements ActionListener {
 			cardLayout.show(cards, "main");
 			break;
 		case "catName1":
-			String newName1 = JOptionPane.showInputDialog(null,"Enter new name:", catPanel1.cat.name, JOptionPane.QUESTION_MESSAGE);
+			String newName1 = JOptionPane.showInputDialog(null,"Enter new name:",catPanel1.cat.name, JOptionPane.QUESTION_MESSAGE);
 			if(newName1 == null) {
 				return;
 			}
 			else if(newName1.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel1.cat.rename(newName1);
 			catPanel1.catNameButton.setText(newName1);
@@ -128,7 +136,7 @@ public class CatGame extends JFrame implements ActionListener {
 				return;
 			}
 			else if(newName2.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel2.cat.rename(newName2);
 			catPanel2.catNameButton.setText(newName2);
@@ -141,7 +149,7 @@ public class CatGame extends JFrame implements ActionListener {
 				return;
 			}
 			else if(newName3.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel3.cat.rename(newName3);
 			catPanel3.catNameButton.setText(newName3);
@@ -154,7 +162,7 @@ public class CatGame extends JFrame implements ActionListener {
 				return;
 			}
 			else if(newName4.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel4.cat.rename(newName4);
 			catPanel4.catNameButton.setText(newName4);

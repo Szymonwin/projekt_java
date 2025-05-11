@@ -19,7 +19,7 @@ import javax.swing.UIManager;
 public class CatGame extends JFrame implements ActionListener {
 	
 	private static final long serialVersionUID = 1L;
-	private static final String[] catNames = {"stefan", "mordka", "syczek", "hela"};
+	private static final String[] catNames = {"hela", "mordka", "syczek", "stefan"};
 	//private static final String[] foodNames = {"Food1", "Food2", "Food3", "Food4", "Food5", "Food6"};
 	
 	private JPanel cards;

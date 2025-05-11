@@ -153,11 +153,11 @@ public class CatPanel extends JPanel implements ActionListener{
 		foodPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		this.add(foodPanel,BorderLayout.PAGE_END);
 		
-		foodButton1 = new IconButton("fish.png", 150, 100, foodNames[0]);
+		foodButton1 = new IconButton("fish.png", 168, 100, foodNames[0]);
 		foodButton1.setToolTipText(foodNames[0]);
 		foodButton1.addActionListener(this);
 		
-		foodButton2 = new IconButton("chicken.png", 100, 100, foodNames[1]);
+		foodButton2 = new IconButton("chicken.png", 98, 100, foodNames[1]);
 		foodButton2.setToolTipText(foodNames[1]);
 		foodButton2.addActionListener(this);
 		
@@ -165,15 +165,15 @@ public class CatPanel extends JPanel implements ActionListener{
 		foodButton3.setToolTipText(foodNames[2]);
 		foodButton3.addActionListener(this);
 		
-		foodButton4 = new IconButton("milk.png", 130, 100, foodNames[3]);
+		foodButton4 = new IconButton("milk.png", 153, 100, foodNames[3]);
 		foodButton4.setToolTipText(foodNames[3]);
 		foodButton4.addActionListener(this);
 		
-		foodButton5 = new IconButton("muffin.png", 100, 100, foodNames[4]);
+		foodButton5 = new IconButton("muffin.png", 97, 100, foodNames[4]);
 		foodButton5.setToolTipText(foodNames[4]);
 		foodButton5.addActionListener(this);
 
-		foodButton6 = new IconButton("cake.png", 90, 100, foodNames[5]);
+		foodButton6 = new IconButton("cake.png", 93, 100, foodNames[5]);
 		foodButton6.setToolTipText(foodNames[5]);
 		foodButton6.addActionListener(this);
 		

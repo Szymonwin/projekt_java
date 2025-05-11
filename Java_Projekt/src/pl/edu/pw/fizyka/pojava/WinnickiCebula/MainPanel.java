@@ -17,8 +17,7 @@ public class MainPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);
 	
-	protected JButton catButton2, catButton3, catButton4;
-	protected IconButton catButton1;
+	protected IconButton catButton1, catButton2, catButton3, catButton4;
 	protected IconButton backToMenuButton;
 	private JPanel upperPanel, centerPanel;
 	
@@ -43,15 +42,10 @@ public class MainPanel extends JPanel {
 		centerPanel.setBackground(backgroundColor);
 		
 		//guziki-koty
-		catButton1 = new IconButton("stefan.png", 150, 200, "cat1");
-		
-		
-		catButton2 = new JButton("cat2");
-		catButton2.setActionCommand("cat2");
-		catButton3 = new JButton("cat3");
-		catButton3.setActionCommand("cat3");
-		catButton4 = new JButton("cat4");
-		catButton4.setActionCommand("cat4");
+		catButton1 = new IconButton("hela.png", 0.3, "cat1");
+		catButton2 = new IconButton("mordka.png", 0.3, "cat2");
+		catButton3 = new IconButton("syczek.png", 0.3, "cat3");
+		catButton4 = new IconButton("stefan.png", 0.3, "cat4");
 		
 		centerPanel.add(catButton1);
 		centerPanel.add(catButton2);

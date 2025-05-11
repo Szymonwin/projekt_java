@@ -8,15 +8,13 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.border.EmptyBorder;
@@ -27,7 +25,7 @@ import javax.swing.border.EmptyBorder;
  * @author Szymon
  * @author Marianka
  */
-public class CatPanel extends JPanel implements ActionListener, MouseListener{
+public class CatPanel extends JPanel implements ActionListener{
 	
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);
@@ -35,13 +33,14 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 	
 	protected IconButton backToMainButton,foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
 	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel, foodListPanel, namePanel, backButtonPanel;
-	private JLabel catNameLabel, CatpngLabel, happinessLabel,hungryLabel;
+	private JLabel CatpngLabel, happinessLabel,hungryLabel;
 	private JMenuBar foodMenuBar;
 	private Food food1, food2, food3, food4, food5, food6;
 	private JMenu foodListMenu;
+	protected JButton catNameButton;
 	private JMenuItem foodRanked1,foodRanked2,foodRanked3,foodRanked4,foodRanked5,foodRanked6;
 	private JProgressBar happinessBar, hungerBar;
-	private Cat cat;
+	protected Cat cat;
 	private ArrayList<Food> listOfFood;
 
 	protected CatPanel(String catName){
@@ -85,13 +84,14 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 		
 		
 		//imię kota
-		catNameLabel = new JLabel(cat.name);
-		catNameLabel.setFont(new Font("Helvetica", Font.BOLD, 40));
+		catNameButton = new JButton(cat.name);
+		catNameButton.setFont(new Font("Helvetica", Font.BOLD, 40));
 		namePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		namePanel.setBackground(backgroundColor);
-		catNameLabel.setToolTipText("click to change name");
-		catNameLabel.addMouseListener(this);
-		namePanel.add(catNameLabel);
+		catNameButton.setToolTipText("click to change name");
+		catNameButton.setBorder(null);
+		catNameButton.setBackground(null);
+		namePanel.add(catNameButton);
 		upperPanel.add(namePanel);
 		
 		//lista ulubionych potraw kota
@@ -258,45 +258,6 @@ public class CatPanel extends JPanel implements ActionListener, MouseListener{
 			happinessBar.setValue(cat.levelOfHappiness);
 			break;
 		}
-		
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		
-		String newName = JOptionPane.showInputDialog(null,"Enter new name:", cat.name, JOptionPane.QUESTION_MESSAGE);
-		if(newName == null) {
-			return;
-		}
-		else if(newName.trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
-		}else {
-		cat.rename(newName);
-		catNameLabel.setText(newName);
-		}
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 }

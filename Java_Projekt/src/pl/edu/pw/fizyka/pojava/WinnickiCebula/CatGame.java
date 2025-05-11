@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -63,12 +64,16 @@ public class CatGame extends JFrame implements ActionListener {
 		mainPanel = new MainPanel();
 		cards.add(mainPanel, "main");
 		catPanel1 = new CatPanel(catNames[0]);
+		catPanel1.catNameButton.setActionCommand("catName1");
 		cards.add(catPanel1, "cp1");
 		catPanel2 = new CatPanel(catNames[1]);
+		catPanel2.catNameButton.setActionCommand("catName2");
 		cards.add(catPanel2, "cp2");
 		catPanel3 = new CatPanel(catNames[2]);
+		catPanel3.catNameButton.setActionCommand("catName3");
 		cards.add(catPanel3, "cp3");
 		catPanel4 = new CatPanel(catNames[3]);
+		catPanel4.catNameButton.setActionCommand("catName4");
 		cards.add(catPanel4, "cp4");
 		
 		//actionListener do wszystkich guzikow
@@ -83,6 +88,15 @@ public class CatGame extends JFrame implements ActionListener {
 		catPanel2.backToMainButton.addActionListener(this);
 		catPanel3.backToMainButton.addActionListener(this);
 		catPanel4.backToMainButton.addActionListener(this);
+		catPanel1.catNameButton.addActionListener(this);
+		catPanel2.catNameButton.addActionListener(this);
+		catPanel3.catNameButton.addActionListener(this);
+		catPanel4.catNameButton.addActionListener(this);
+		
+		mainPanel.catButton1.setToolTipText(catNames[0]);
+		mainPanel.catButton2.setToolTipText(catNames[1]);
+		mainPanel.catButton3.setToolTipText(catNames[2]);
+		mainPanel.catButton4.setToolTipText(catNames[3]);
 		
 		cardLayout.show(cards, "menu");
 	}
@@ -116,6 +130,58 @@ public class CatGame extends JFrame implements ActionListener {
 			break;
 		case "backToMain":
 			cardLayout.show(cards, "main");
+			break;
+		case "catName1":
+			String newName1 = JOptionPane.showInputDialog(null,"Enter new name:", catPanel1.cat.name, JOptionPane.QUESTION_MESSAGE);
+			if(newName1 == null) {
+				return;
+			}
+			else if(newName1.trim().isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
+			}else {
+			catPanel1.cat.rename(newName1);
+			catPanel1.catNameButton.setText(newName1);
+			mainPanel.catButton1.setToolTipText(newName1);
+			}
+			break;
+		case "catName2":
+			String newName2 = JOptionPane.showInputDialog(null,"Enter new name:", catPanel2.cat.name, JOptionPane.QUESTION_MESSAGE);
+			if(newName2 == null) {
+				return;
+			}
+			else if(newName2.trim().isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
+			}else {
+			catPanel2.cat.rename(newName2);
+			catPanel2.catNameButton.setText(newName2);
+			mainPanel.catButton2.setToolTipText(newName2);
+			}
+			break;
+		case "catName3":
+			String newName3 = JOptionPane.showInputDialog(null,"Enter new name:", catPanel3.cat.name, JOptionPane.QUESTION_MESSAGE);
+			if(newName3 == null) {
+				return;
+			}
+			else if(newName3.trim().isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
+			}else {
+			catPanel3.cat.rename(newName3);
+			catPanel3.catNameButton.setText(newName3);
+			mainPanel.catButton3.setToolTipText(newName3);
+			}
+			break;
+		case "catName4":
+			String newName4 = JOptionPane.showInputDialog(null,"Enter new name:", catPanel4.cat.name, JOptionPane.QUESTION_MESSAGE);
+			if(newName4 == null) {
+				return;
+			}
+			else if(newName4.trim().isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE);
+			}else {
+			catPanel4.cat.rename(newName4);
+			catPanel4.catNameButton.setText(newName4);
+			mainPanel.catButton4.setToolTipText(newName4);
+			}
 			break;
 		}
 

@@ -19,17 +19,15 @@ import javax.swing.UIManager;
 public class CatGame extends JFrame implements ActionListener {
 	
 	private static final long serialVersionUID = 1L;
-	private static final String[] catNames = {"hela", "mordka", "syczek", "stefan"};
-	//private static final String[] foodNames = {"Food1", "Food2", "Food3", "Food4", "Food5", "Food6"};
+	private static final String[] catNames = {"hela", "mordka", "syczek", "stefan"}; 
+	private static final String[] catPNGs = {"hela.png", "mordka.png", "syczek.png", "stefan.png"};
 	
 	private JPanel cards;
 	private MainPanel mainPanel;
 	private MenuPanel menuPanel;
-	//private Food food1, food2, food3, food4, food5, food6;
 	private CatPanel catPanel1, catPanel2, catPanel3, catPanel4;
 	private String command;
 	private CardLayout cardLayout;
-	//private ArrayList<Food> listOfFood;
 	
 	public CatGame(String title) {
 		super(title);
@@ -38,41 +36,21 @@ public class CatGame extends JFrame implements ActionListener {
 		cards = new JPanel(cardLayout);
 		this.add(cards);
 		
-		/*food1 = new Food(foodNames[0], 5);
-		food2 = new Food(foodNames[1], 5);
-		food3 = new Food(foodNames[2], 5);
-		food4 = new Food(foodNames[3], 5);
-		food5 = new Food(foodNames[4], 5);
-		food6 = new Food(foodNames[5], 5);
-		
-		listOfFood = new ArrayList<Food>();
-		listOfFood.add(food1);
-		listOfFood.add(food2);
-		listOfFood.add(food3);
-		listOfFood.add(food4);
-		listOfFood.add(food5);
-		listOfFood.add(food6);*/
-		
-		/*cat1 = new Cat(catNames[0]);
-		cat2 = new Cat(catNames[1]);
-		cat3 = new Cat(catNames[2]);
-		cat4 = new Cat(catNames[3]);*/
-		
 		//ogarnięcie CardLayoutu
 		menuPanel = new MenuPanel();
 		cards.add(menuPanel, "menu");
 		mainPanel = new MainPanel();
 		cards.add(mainPanel, "main");
-		catPanel1 = new CatPanel(catNames[0]);
+		catPanel1 = new CatPanel(catNames[0], catPNGs[0]);
 		catPanel1.catNameButton.setActionCommand("catName1");
 		cards.add(catPanel1, "cp1");
-		catPanel2 = new CatPanel(catNames[1]);
+		catPanel2 = new CatPanel(catNames[1], catPNGs[1]);
 		catPanel2.catNameButton.setActionCommand("catName2");
 		cards.add(catPanel2, "cp2");
-		catPanel3 = new CatPanel(catNames[2]);
+		catPanel3 = new CatPanel(catNames[2], catPNGs[2]);
 		catPanel3.catNameButton.setActionCommand("catName3");
 		cards.add(catPanel3, "cp3");
-		catPanel4 = new CatPanel(catNames[3]);
+		catPanel4 = new CatPanel(catNames[3], catPNGs[3]);
 		catPanel4.catNameButton.setActionCommand("catName4");
 		cards.add(catPanel4, "cp4");
 		

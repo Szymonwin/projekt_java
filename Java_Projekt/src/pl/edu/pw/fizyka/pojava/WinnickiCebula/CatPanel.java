@@ -5,11 +5,16 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import java.util.ArrayList;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -25,38 +30,41 @@ import javax.swing.border.EmptyBorder;
  * @author Szymon
  * @author Marianka
  */
-public class CatPanel extends JPanel implements ActionListener{
+public class CatPanel extends JPanel implements ActionListener/*, ComponentListener*/{
 	
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);
 	private static final String[] foodNames = {"Fish", "Chicken", "Carrot", "Milk", "Muffin", "Cake"};
 	
 	protected IconButton backToMainButton,foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
+	protected JButton catNameButton;
+	protected Cat cat;
 	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel, foodListPanel, namePanel, backButtonPanel;
-	private JLabel CatpngLabel, happinessLabel,hungryLabel;
+	private JLabel catpngLabel, happinessLabel,hungryLabel;
 	private JMenuBar foodMenuBar;
 	private Food food1, food2, food3, food4, food5, food6;
 	private JMenu foodListMenu;
-	protected JButton catNameButton;
-	private JMenuItem foodRanked1,foodRanked2,foodRanked3,foodRanked4,foodRanked5,foodRanked6;
+	private JMenuItem foodRanked1, foodRanked2, foodRanked3, foodRanked4, foodRanked5, foodRanked6;
 	private JProgressBar happinessBar, hungerBar;
-	protected Cat cat;
 	private ArrayList<Food> listOfFood;
+	private ImageIcon catIcon;
 
-	protected CatPanel(String catName){
+	protected CatPanel(String catName, String catPNG){
 		super();
 		this.setBackground(backgroundColor);
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
 		
+		//this.addComponentListener(this);
+		
 		cat = new Cat(catName);
 		
-		food1 = new Food(foodNames[0],20);
-		food2 = new Food(foodNames[1],5);
+		food1 = new Food(foodNames[0],13);
+		food2 = new Food(foodNames[1],13);
 		food3 = new Food(foodNames[2],5);
 		food4 = new Food(foodNames[3],5);
-		food5 = new Food(foodNames[4],5);
-		food6 = new Food(foodNames[5],5);
+		food5 = new Food(foodNames[4],10);
+		food6 = new Food(foodNames[5],20);
 		
 		listOfFood = new ArrayList<Food>();
 		listOfFood.add(food1);
@@ -140,11 +148,19 @@ public class CatPanel extends JPanel implements ActionListener{
 		centerPanel.add(barPanel, BorderLayout.PAGE_START);
 		
 		//panel z obrazkiem kota
+		
+		//jest to bardzo robocze rozwiazanie chwilowo
+		catIcon = new ImageIcon(catPNG);
+		Image img = catIcon.getImage();
+		Image newImg = img.getScaledInstance( (int)( catIcon.getIconWidth() * 0.35 ), (int)( catIcon.getIconHeight() * 0.35 ), Image.SCALE_SMOOTH);
+		ImageIcon newIcon = new ImageIcon(newImg);
+		
+		
 		catImagePanel = new JPanel();
-		CatpngLabel = new JLabel("Cat.PNG");
+		catpngLabel = new JLabel(newIcon);
 		catImagePanel.setBackground(backgroundColor);
 		
-		catImagePanel.add(CatpngLabel);
+		catImagePanel.add(catpngLabel);
 		centerPanel.add(catImagePanel,BorderLayout.CENTER);
 		
 		//panel dolny z listą dostępnych potraw
@@ -260,4 +276,47 @@ public class CatPanel extends JPanel implements ActionListener{
 		}
 		
 	}
+	
+	
+	
+	//to chwilowo nie dziala xdd
+	
+	/*
+	public ImageIcon setCatSize(ImageIcon catIcon) {
+		
+		int pWidth = super.getWidth();
+		int pHeight = super.getHeight();
+		
+		double ratio = Math.min((catIcon.getIconWidth() / pWidth)*200000, (catIcon.getIconHeight() / pHeight)*200000);
+		Image img = catIcon.getImage();
+		Image newImg = img.getScaledInstance((int)(ratio*catIcon.getIconWidth()), (int)(ratio*catIcon.getIconHeight()), Image.SCALE_SMOOTH);
+		ImageIcon newIcon = new ImageIcon(newImg);
+		
+		return newIcon;
+	}
+
+	@Override
+	public void componentResized(ComponentEvent e) {
+		catpngLabel.setIcon(setCatSize(catIcon));
+		
+	}
+
+	@Override
+	public void componentMoved(ComponentEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void componentShown(ComponentEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void componentHidden(ComponentEvent e) {
+		// TODO Auto-generated method stub
+		
+	} */
+	
 }

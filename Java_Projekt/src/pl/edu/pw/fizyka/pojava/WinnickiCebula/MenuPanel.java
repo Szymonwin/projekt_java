@@ -50,7 +50,7 @@ public class MenuPanel extends JPanel{
 		buttonPanel.add(start); 
 		buttonPanel.add(exit);
 		
-		label = new JLabel("Gra o kotach");
+		label = new JLabel("Cat Game");
 		label.setFont(new Font("Helvetica", Font.BOLD, 20));
 		newIcon = new ImageIcon("minicat.png");
 		Image img = newIcon.getImage();

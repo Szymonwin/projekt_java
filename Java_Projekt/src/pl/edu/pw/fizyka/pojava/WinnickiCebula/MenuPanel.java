@@ -24,6 +24,7 @@ import javax.swing.border.EmptyBorder;
 public class MenuPanel extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);
+	private static final Color buttonColor = new Color(201, 253, 234);
 	
 	protected JButton start, exit, next;
 	private BoxLayout boxLayout;
@@ -43,8 +44,10 @@ public class MenuPanel extends JPanel{
 		titlePanel.setBackground(backgroundColor);
 		
 		start = new JButton("START");
+		start.setBackground(buttonColor);
 		start.setActionCommand("start");
 		exit = new JButton("EXIT");
+		exit.setBackground(buttonColor);
 		exit.setActionCommand("exit");
 		
 		buttonPanel.add(start); 

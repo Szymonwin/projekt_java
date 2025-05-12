@@ -34,6 +34,7 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 	
 	private static final long serialVersionUID = 1L;
 	private static final Color backgroundColor = new Color(255, 200, 251);
+	private static final Color buttonColor = new Color(201, 253, 234);
 	private static final String[] foodNames = {"Fish", "Chicken", "Carrot", "Milk", "Muffin", "Cake"};
 	
 	protected IconButton backToMainButton,foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
@@ -47,7 +48,7 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 	private JMenuItem foodRanked1, foodRanked2, foodRanked3, foodRanked4, foodRanked5, foodRanked6;
 	private JProgressBar happinessBar, hungerBar;
 	private ArrayList<Food> listOfFood;
-	private ImageIcon catIcon;
+	private ImageIcon catIcon, happinessIcon, hungerIcon;
 
 	protected CatPanel(String catName, String catPNG){
 		super();
@@ -105,12 +106,22 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		//lista ulubionych potraw kota
 		foodMenuBar = new JMenuBar();
 		foodListMenu = new JMenu("Favourite foods");
+		foodMenuBar.setBackground(buttonColor);
+		foodListMenu.setBackground(buttonColor);
+		
 		foodRanked1 = new JMenuItem("1 "+listOfFood.get(0).name);
 		foodRanked2 = new JMenuItem("2 "+listOfFood.get(1).name);
 		foodRanked3 = new JMenuItem("3 "+listOfFood.get(2).name);
 		foodRanked4 = new JMenuItem("4 "+listOfFood.get(3).name);
 		foodRanked5 = new JMenuItem("5 "+listOfFood.get(4).name);
 		foodRanked6 = new JMenuItem("6 "+listOfFood.get(5).name);
+		foodRanked1.setBackground(buttonColor);
+		foodRanked2.setBackground(buttonColor);
+		foodRanked3.setBackground(buttonColor);
+		foodRanked4.setBackground(buttonColor);
+		foodRanked5.setBackground(buttonColor);
+		foodRanked6.setBackground(buttonColor);
+		
 		foodListPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		foodListPanel.setBackground(backgroundColor);
 		
@@ -138,8 +149,19 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		hungerBar = new JProgressBar(0,100);
 		hungerBar.setValue(cat.levelOfHunger);
 		barPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		happinessLabel = new JLabel("Happiness");
-		hungryLabel = new JLabel("Hunger");
+		
+		happinessIcon = new ImageIcon("happiness.png");
+		Image hapImg = happinessIcon.getImage();
+		Image newHapImg = hapImg.getScaledInstance( (int)( happinessIcon.getIconWidth() * 0.04 ), (int)( happinessIcon.getIconHeight() * 0.04 ), Image.SCALE_SMOOTH);
+		ImageIcon newHapIcon = new ImageIcon(newHapImg);
+		
+		hungerIcon = new ImageIcon("hunger.png");
+		Image hunImg = hungerIcon.getImage();
+		Image newHunImg = hunImg.getScaledInstance( (int)( hungerIcon.getIconWidth() * 0.06 ), (int)( hungerIcon.getIconHeight() * 0.06 ), Image.SCALE_SMOOTH);
+		ImageIcon newHunIcon = new ImageIcon(newHunImg);
+		
+		happinessLabel = new JLabel(newHapIcon);
+		hungryLabel = new JLabel(newHunIcon);
 		
 		barPanel.add(happinessLabel);
 		barPanel.add(happinessBar);

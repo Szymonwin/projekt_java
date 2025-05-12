@@ -9,17 +9,15 @@ import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
 import java.util.ArrayList;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.border.EmptyBorder;
@@ -48,7 +46,7 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 	private JMenuItem foodRanked1, foodRanked2, foodRanked3, foodRanked4, foodRanked5, foodRanked6;
 	private JProgressBar happinessBar, hungerBar;
 	private ArrayList<Food> listOfFood;
-	private ImageIcon catIcon, happinessIcon, hungerIcon;
+	private ImageIcon catIcon, happinessIcon, hungerIcon, miniIcon, miniCat;
 
 	protected CatPanel(String catName, String catPNG){
 		super();
@@ -222,80 +220,45 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		foodPanel.add(foodButton4);
 		foodPanel.add(foodButton5);
 		foodPanel.add(foodButton6); 
+		
+		miniIcon = new ImageIcon("minicat.png");
+		Image miniImg = miniIcon.getImage();
+		Image newMiniImg = miniImg.getScaledInstance( (int)( miniIcon.getIconWidth() * 0.07 ), (int)( miniIcon.getIconHeight() * 0.07 ), Image.SCALE_SMOOTH);
+		miniCat = new ImageIcon(newMiniImg);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String command = e.getActionCommand();
 		
-		switch(command){
-		case "Fish":
-			try {
+		try {
+			switch(command){
+			case "Fish":
 				cat.feed(food1);
-			}catch(TooMuchFoodException ex) {
-				System.out.println("catch food");
-			}catch(TooMuchHappinessException exp) {
-				System.out.println("catch Happiness");
-			}
-			hungerBar.setValue(cat.levelOfHunger);
-			happinessBar.setValue(cat.levelOfHappiness);
-			break;
-		case "Chicken":
-			try {
+				break;
+			case "Chicken":
 				cat.feed(food2);
-			}catch(TooMuchFoodException ex) {
-				System.out.println("catch food");
-			}catch(TooMuchHappinessException exp) {
-				System.out.println("catch Happiness");
-			}
-			hungerBar.setValue(cat.levelOfHunger);
-			happinessBar.setValue(cat.levelOfHappiness);
-			break;
-		case "Carrot":
-			try {
+				break;
+			case "Carrot":
 				cat.feed(food3);
-			}catch(TooMuchFoodException ex) {
-				System.out.println("catch food");
-			}catch(TooMuchHappinessException exp) {
-				System.out.println("catch Happiness");
-			}
-			hungerBar.setValue(cat.levelOfHunger);
-			happinessBar.setValue(cat.levelOfHappiness);
-			break;
-		case "Milk":
-			try {
+				break;
+			case "Milk":
 				cat.feed(food4);
-			}catch(TooMuchFoodException ex) {
-				System.out.println("catch food");
-			}catch(TooMuchHappinessException exp) {
-				System.out.println("catch Happiness");
-			}
-			hungerBar.setValue(cat.levelOfHunger);
-			happinessBar.setValue(cat.levelOfHappiness);
-			break;
-		case "Muffin":
-			try {
+				break;
+			case "Muffin":
 				cat.feed(food5);
-			}catch(TooMuchFoodException ex) {
-				System.out.println("catch food");
-			}catch(TooMuchHappinessException exp) {
-				System.out.println("catch Happiness");
-			}
-			hungerBar.setValue(cat.levelOfHunger);
-			happinessBar.setValue(cat.levelOfHappiness);
-			break;
-		case "Cake":
-			try {
+				break;
+			case "Cake":
 				cat.feed(food6);
-			}catch(TooMuchFoodException ex) {
-				System.out.println("catch food");
-			}catch(TooMuchHappinessException exp) {
-				System.out.println("catch Happiness");
+				break;
 			}
-			hungerBar.setValue(cat.levelOfHunger);
-			happinessBar.setValue(cat.levelOfHappiness);
-			break;
-		}
+		} catch (TooMuchFoodException ex) {
+			JOptionPane.showMessageDialog(null, "Cat is full", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+		} catch (TooMuchHappinessException exp) {}
+
+		hungerBar.setValue(cat.levelOfHunger);
+		happinessBar.setValue(cat.levelOfHappiness);
+		
 		
 	}
 	

@@ -53,8 +53,9 @@ public class MenuPanel extends JPanel{
 		buttonPanel.add(start); 
 		buttonPanel.add(exit);
 		
+		// czcionki Skia, SimSun
 		label = new JLabel("Cat Game");
-		label.setFont(new Font("Helvetica", Font.BOLD, 20));
+		label.setFont(new Font("Skia", Font.BOLD, 50));
 		newIcon = new ImageIcon("minicat.png");
 		Image img = newIcon.getImage();
 		Image newImg = img.getScaledInstance( (int)( newIcon.getIconWidth() * 0.07 ), (int)( newIcon.getIconHeight() * 0.07 ), Image.SCALE_SMOOTH);

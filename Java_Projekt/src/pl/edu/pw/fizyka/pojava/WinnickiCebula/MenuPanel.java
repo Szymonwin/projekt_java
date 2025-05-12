@@ -45,9 +45,11 @@ public class MenuPanel extends JPanel{
 		
 		start = new JButton("START");
 		start.setBackground(buttonColor);
+		start.setFont(new Font(null, Font.PLAIN, 50));
 		start.setActionCommand("start");
 		exit = new JButton("EXIT");
 		exit.setBackground(buttonColor);
+		exit.setFont(new Font(null, Font.PLAIN, 50));
 		exit.setActionCommand("exit");
 		
 		buttonPanel.add(start); 
@@ -55,7 +57,7 @@ public class MenuPanel extends JPanel{
 		
 		// czcionki Skia, SimSun
 		label = new JLabel("Cat Game");
-		label.setFont(new Font("Skia", Font.BOLD, 50));
+		label.setFont(new Font(null, Font.BOLD, 50));
 		newIcon = new ImageIcon("minicat.png");
 		Image img = newIcon.getImage();
 		Image newImg = img.getScaledInstance( (int)( newIcon.getIconWidth() * 0.07 ), (int)( newIcon.getIconHeight() * 0.07 ), Image.SCALE_SMOOTH);

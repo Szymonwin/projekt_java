@@ -25,7 +25,6 @@ public class Cat {
 	 * zmienia jego statystyki na podstawie podanego mu jedzenia
 	 * @param food 
 	 * @return nic
-	 * @author Szymon
 	 * @throws TooMuchFoodException 
 	 */
 	public void feed(Food food) throws TooMuchFoodException,TooMuchHappinessException {
@@ -45,7 +44,6 @@ public class Cat {
 	 * metoda ustawiająca =-losowy ranking jedzenia
 	 * @return nic
 	 * @param nic
-	 * @author Szymon
 	 */
 	public void rankFood(ArrayList<Food> listOfFood) {
 		this.foodRanking = listOfFood;
@@ -55,7 +53,6 @@ public class Cat {
 	 * metoda zmieniająca imię kota
 	 * @param newName nowe imie
 	 * @return nic
-	 * @author Szymon
 	 */
 	public void rename(String newName) {
 		this.name = newName;

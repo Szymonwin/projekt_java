@@ -118,12 +118,12 @@ public class CatGame extends JFrame implements ActionListener {
 			cardLayout.show(cards, "main");
 			break;
 		case "catName1":
-			String newName1 = JOptionPane.showInputDialog(null,"Enter new name:",catPanel1.cat.name, JOptionPane.QUESTION_MESSAGE);
+			String newName1 = (String) JOptionPane.showInputDialog(this,"Enter new name:",catPanel1.cat.name, JOptionPane.QUESTION_MESSAGE, miniCat, null, catPanel1.cat.name);
 			if(newName1 == null) {
 				return;
 			}
 			else if(newName1.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+				JOptionPane.showMessageDialog(this, "Cat's name can't be empty", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel1.cat.rename(newName1);
 			catPanel1.catNameButton.setText(newName1);
@@ -131,12 +131,12 @@ public class CatGame extends JFrame implements ActionListener {
 			}
 			break;
 		case "catName2":
-			String newName2 = JOptionPane.showInputDialog(null,"Enter new name:", catPanel2.cat.name, JOptionPane.QUESTION_MESSAGE);
+			String newName2 = (String) JOptionPane.showInputDialog(this,"Enter new name:", catPanel2.cat.name, JOptionPane.QUESTION_MESSAGE, miniCat, null, catPanel2.cat.name);
 			if(newName2 == null) {
 				return;
 			}
 			else if(newName2.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+				JOptionPane.showMessageDialog(this,"Cat's name can't be empty", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel2.cat.rename(newName2);
 			catPanel2.catNameButton.setText(newName2);
@@ -144,12 +144,12 @@ public class CatGame extends JFrame implements ActionListener {
 			}
 			break;
 		case "catName3":
-			String newName3 = JOptionPane.showInputDialog(null,"Enter new name:", catPanel3.cat.name, JOptionPane.QUESTION_MESSAGE);
+			String newName3 = (String) JOptionPane.showInputDialog(this,"Enter new name:", catPanel3.cat.name, JOptionPane.QUESTION_MESSAGE, miniCat, null, catPanel3.cat.name);
 			if(newName3 == null) {
 				return;
 			}
 			else if(newName3.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+				JOptionPane.showMessageDialog(this, "Cat's name can't be empty", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel3.cat.rename(newName3);
 			catPanel3.catNameButton.setText(newName3);
@@ -157,12 +157,12 @@ public class CatGame extends JFrame implements ActionListener {
 			}
 			break;
 		case "catName4":
-			String newName4 = JOptionPane.showInputDialog(null,"Enter new name:", catPanel4.cat.name, JOptionPane.QUESTION_MESSAGE);
+			String newName4 = (String) JOptionPane.showInputDialog(this,"Enter new name:", catPanel4.cat.name, JOptionPane.QUESTION_MESSAGE, miniCat, null, catPanel4.cat.name);
 			if(newName4 == null) {
 				return;
 			}
 			else if(newName4.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(null, "Cat's name didn't change", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+				JOptionPane.showMessageDialog(this, "Cat's name can't be empty", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel4.cat.rename(newName4);
 			catPanel4.catNameButton.setText(newName4);

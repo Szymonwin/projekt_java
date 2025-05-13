@@ -253,9 +253,9 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 				break;
 			}
 		} catch (HatedFoodException hfe) {
-			JOptionPane.showMessageDialog(null, "Cat hates this food", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+			JOptionPane.showMessageDialog(this, "Cat hates this food", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
 		} catch (TooMuchFoodException tmfx) {
-			JOptionPane.showMessageDialog(null, "Cat is full", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+			JOptionPane.showMessageDialog(this, "Cat is full", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
 		} catch (TooMuchHappinessException tmhe) {}
 
 		hungerBar.setValue(cat.levelOfHunger);

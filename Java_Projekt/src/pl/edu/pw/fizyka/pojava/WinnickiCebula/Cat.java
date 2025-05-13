@@ -27,17 +27,23 @@ public class Cat {
 	 * @return nic
 	 * @throws TooMuchFoodException 
 	 */
-	public void feed(Food food) throws TooMuchFoodException,TooMuchHappinessException {
-		levelOfHunger += food.foodPoints;
-		levelOfHappiness += 7 * (6 - foodRanking.indexOf(food));
-		if(levelOfHunger > maxFood) {
-			levelOfHunger = maxFood;
-			throw new TooMuchFoodException();
+	public void feed(Food food) throws TooMuchFoodException, TooMuchHappinessException, HatedFoodException{
+		if(foodRanking.indexOf(food) == 5) {
+			throw new HatedFoodException();
+		} else {
+			levelOfHunger += food.foodPoints;
+			levelOfHappiness += 7 * (6 - foodRanking.indexOf(food));
+			
+			if(levelOfHunger > maxFood) {
+				levelOfHunger = maxFood;
+				throw new TooMuchFoodException();
+			}
+			if(levelOfHappiness > maxHappiness) {
+				levelOfHappiness = maxHappiness;
+				throw new TooMuchHappinessException();
+			}
 		}
-		if(levelOfHappiness > maxHappiness) {
-			levelOfHappiness = maxHappiness;
-			throw new TooMuchHappinessException();
-		}
+		
 	}
 	
 	/**

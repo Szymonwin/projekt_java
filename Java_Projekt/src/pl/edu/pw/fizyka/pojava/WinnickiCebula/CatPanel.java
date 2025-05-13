@@ -252,9 +252,11 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 				cat.feed(food6);
 				break;
 			}
-		} catch (TooMuchFoodException ex) {
+		} catch (HatedFoodException hfe) {
+			JOptionPane.showMessageDialog(null, "Cat hates this food", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+		} catch (TooMuchFoodException tmfx) {
 			JOptionPane.showMessageDialog(null, "Cat is full", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
-		} catch (TooMuchHappinessException exp) {}
+		} catch (TooMuchHappinessException tmhe) {}
 
 		hungerBar.setValue(cat.levelOfHunger);
 		happinessBar.setValue(cat.levelOfHappiness);

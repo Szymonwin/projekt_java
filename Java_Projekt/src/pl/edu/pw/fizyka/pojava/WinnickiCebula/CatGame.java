@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
 
 /**
  * aplikacja gry
@@ -85,6 +86,9 @@ public class CatGame extends JFrame implements ActionListener {
 		Image img = newIcon.getImage();
 		Image newImg = img.getScaledInstance( (int)( newIcon.getIconWidth() * 0.07 ), (int)( newIcon.getIconHeight() * 0.07 ), Image.SCALE_SMOOTH);
 		miniCat = new ImageIcon(newImg);
+		
+		UIManager.put("OptionPane.background",new ColorUIResource(255, 132, 239));
+		UIManager.put("Panel.background",new ColorUIResource(255, 132, 239));
 	}
 	
 	//funckja onslugujaca wszystkie guziki w programie
@@ -123,7 +127,7 @@ public class CatGame extends JFrame implements ActionListener {
 				return;
 			}
 			else if(newName1.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(this, "Cat's name can't be empty", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+				JOptionPane.showMessageDialog(this, "Cat's name can't be empty", "name is null", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel1.cat.rename(newName1);
 			catPanel1.catNameButton.setText(newName1);
@@ -136,7 +140,7 @@ public class CatGame extends JFrame implements ActionListener {
 				return;
 			}
 			else if(newName2.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(this,"Cat's name can't be empty", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+				JOptionPane.showMessageDialog(this,"Cat's name can't be empty", "name is null", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel2.cat.rename(newName2);
 			catPanel2.catNameButton.setText(newName2);
@@ -149,7 +153,7 @@ public class CatGame extends JFrame implements ActionListener {
 				return;
 			}
 			else if(newName3.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(this, "Cat's name can't be empty", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+				JOptionPane.showMessageDialog(this, "Cat's name can't be empty", "name is null", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel3.cat.rename(newName3);
 			catPanel3.catNameButton.setText(newName3);
@@ -162,7 +166,7 @@ public class CatGame extends JFrame implements ActionListener {
 				return;
 			}
 			else if(newName4.trim().isEmpty()) {
-				JOptionPane.showMessageDialog(this, "Cat's name can't be empty", "Informacja", JOptionPane.WARNING_MESSAGE,miniCat);
+				JOptionPane.showMessageDialog(this, "Cat's name can't be empty", "name is null", JOptionPane.WARNING_MESSAGE,miniCat);
 			}else {
 			catPanel4.cat.rename(newName4);
 			catPanel4.catNameButton.setText(newName4);

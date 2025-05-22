@@ -18,8 +18,8 @@ public class MainPanel extends JPanel {
 	
 	protected IconButton catButton1, catButton2, catButton3, catButton4;
 	protected IconButton backToMenuButton;
-	private JPanel upperPanel, centerPanel;
-	//private ClockPanel clock;
+	private JPanel upperPanel, centerPanel, bottomPanel;
+	private ClockPanel clock;
 	
 	protected MainPanel(){
 		super();
@@ -43,9 +43,9 @@ public class MainPanel extends JPanel {
 		
 		//guziki-koty
 		catButton1 = new IconButton("hela.png", 0.3, "cat1");
-		catButton2 = new IconButton("mordka.png", 0.3, "cat2");
-		catButton3 = new IconButton("syczek.png", 0.3, "cat3");
-		catButton4 = new IconButton("stefan.png", 0.3, "cat4");
+		catButton2 = new IconButton("mordka.png", 0.25, "cat2");
+		catButton3 = new IconButton("syczek.png", 0.25, "cat3");
+		catButton4 = new IconButton("stefan.png", 0.25, "cat4");
 		
 		centerPanel.add(catButton1);
 		centerPanel.add(catButton2);
@@ -55,7 +55,12 @@ public class MainPanel extends JPanel {
 		this.add(centerPanel, BorderLayout.CENTER);
 		
 		//zegar
-		//clock = new ClockPanel();
+		bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		bottomPanel.setBackground(backgroundColor);
+		clock = new ClockPanel();
+		bottomPanel.add(clock);
+		this.add(bottomPanel,BorderLayout.AFTER_LAST_LINE);
+		
 		
 	}
 	

@@ -38,7 +38,7 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 	protected IconButton backToMainButton,foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
 	protected JButton catNameButton;
 	protected Cat cat;
-	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel, foodListPanel, namePanel, backButtonPanel;
+	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel, foodListPanel, namePanel, backButtonPanel, bottomPanel;
 	private JLabel catpngLabel, happinessLabel,hungryLabel;
 	private JMenuBar foodMenuBar;
 	private Food food1, food2, food3, food4, food5, food6;
@@ -47,12 +47,13 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 	private JProgressBar happinessBar, hungerBar;
 	private ArrayList<Food> listOfFood;
 	private ImageIcon catIcon, happinessIcon, hungerIcon, miniIcon, miniCat;
+	private ClockPanel clock;
 
 	protected CatPanel(String catName, String catPNG){
 		super();
 		this.setBackground(backgroundColor);
 		this.setLayout(new BorderLayout());
-		this.setBorder(new EmptyBorder(new Insets(15, 15, 15, 15)));
+		this.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
 		
 		//this.addComponentListener(this);
 		
@@ -133,7 +134,7 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		foodListPanel.add(foodMenuBar);
 		upperPanel.add(foodListPanel);
 		
-		//panel środkowy z obrazkiem kota oraz jego statystykami
+		//panel środkowy z obrazkiem kota, jego statystykami oraz listą dostępnych potraw
 		centerPanel = new JPanel();
 		this.add(centerPanel,BorderLayout.CENTER);
 		centerPanel.setLayout(new BorderLayout());
@@ -183,11 +184,11 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		catImagePanel.add(catpngLabel);
 		centerPanel.add(catImagePanel,BorderLayout.CENTER);
 		
-		//panel dolny z listą dostępnych potraw
+		//panel z listą dostępnych potraw
 		foodPanel = new JPanel();
 		foodPanel.setBackground(backgroundColor);
 		foodPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		this.add(foodPanel,BorderLayout.PAGE_END);
+		centerPanel.add(foodPanel,BorderLayout.PAGE_END);
 		
 		foodButton1 = new IconButton("fish.png", 168, 100, foodNames[0]);
 		foodButton1.setToolTipText(foodNames[0]);
@@ -220,6 +221,13 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		foodPanel.add(foodButton4);
 		foodPanel.add(foodButton5);
 		foodPanel.add(foodButton6); 
+		
+		//zegar
+		bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		bottomPanel.setBackground(backgroundColor);
+		clock = new ClockPanel();
+		bottomPanel.add(clock);
+		this.add(bottomPanel,BorderLayout.AFTER_LAST_LINE);
 		
 		miniIcon = new ImageIcon("minicat.png");
 		Image miniImg = miniIcon.getImage();

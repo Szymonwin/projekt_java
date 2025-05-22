@@ -19,6 +19,7 @@ public class MainPanel extends JPanel {
 	protected IconButton catButton1, catButton2, catButton3, catButton4;
 	protected IconButton backToMenuButton;
 	private JPanel upperPanel, centerPanel;
+	//private ClockPanel clock;
 	
 	protected MainPanel(){
 		super();
@@ -52,6 +53,10 @@ public class MainPanel extends JPanel {
 		centerPanel.add(catButton4);
 		
 		this.add(centerPanel, BorderLayout.CENTER);
+		
+		//zegar
+		//clock = new ClockPanel();
+		
 	}
 	
 }

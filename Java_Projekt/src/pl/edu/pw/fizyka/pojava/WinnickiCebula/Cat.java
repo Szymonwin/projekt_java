@@ -37,7 +37,7 @@ public class Cat {
 				levelOfHunger = maxFood;
 				throw new TooMuchFoodException();
 			} else {
-				levelOfHappiness += 7 * (6 - foodRanking.indexOf(food));
+				levelOfHappiness += 4 * (6 - foodRanking.indexOf(food));
 				if(levelOfHappiness > maxHappiness) {
 					levelOfHappiness = maxHappiness;
 					throw new TooMuchHappinessException();

@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 
@@ -32,7 +33,6 @@ public class CatGame extends JFrame implements ActionListener {
 	private String command;
 	private CardLayout cardLayout;
 	private ImageIcon miniCat, newIcon;
-	private Starvation starv1, starv2, starv3, starv4;
 	
 	public CatGame(String title) {
 		super(title);
@@ -92,10 +92,10 @@ public class CatGame extends JFrame implements ActionListener {
 		UIManager.put("Panel.background",new ColorUIResource(255, 132, 239));
 		
 		//głodnienie 
-		starv1 = new Starvation(catPanel1);
-		starv2 = new Starvation(catPanel2);
-		starv3 = new Starvation(catPanel3);
-		starv4 = new Starvation(catPanel4);
+		Starvation(catPanel1);
+		Starvation(catPanel2);
+		Starvation(catPanel3);
+		Starvation(catPanel4);
 	}
 	
 	//funckja onslugujaca wszystkie guziki w programie
@@ -182,6 +182,24 @@ public class CatGame extends JFrame implements ActionListener {
 			break;
 		}
 
+	}
+	
+	public void Starvation(CatPanel catPanel) {
+		 Timer timer = new Timer(1000, e -> {
+			 catPanel.cat.levelOfHunger -= 1;
+			 catPanel.cat.levelOfHappiness -= 1;
+			 if (catPanel.cat.levelOfHunger < 0) {
+				 catPanel.cat.levelOfHunger = 0;
+				 catPanel.cat.levelOfHappiness = 0;
+			 }
+			 if (catPanel.cat.levelOfHappiness <0) {
+				 catPanel.cat.levelOfHappiness = 0;
+			 }
+			 catPanel.hungerBar.setValue(catPanel.cat.levelOfHunger);
+			 catPanel.happinessBar.setValue(catPanel.cat.levelOfHappiness);
+	     });
+		 timer.setRepeats(true);
+	     timer.start();	
 	}
 
 	public static void main(String[] args) {

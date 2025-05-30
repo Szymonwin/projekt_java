@@ -60,8 +60,6 @@ public class MainPanel extends JPanel {
 		clock = new ClockPanel();
 		bottomPanel.add(clock);
 		this.add(bottomPanel,BorderLayout.AFTER_LAST_LINE);
-		
-		
 	}
 	
 }

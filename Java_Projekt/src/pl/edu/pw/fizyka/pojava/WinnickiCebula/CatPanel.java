@@ -38,13 +38,13 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 	protected IconButton backToMainButton,foodButton1, foodButton2, foodButton3, foodButton4, foodButton5, foodButton6;
 	protected JButton catNameButton;
 	protected Cat cat;
+	protected JProgressBar happinessBar, hungerBar;
 	private JPanel upperPanel, barPanel, centerPanel, catImagePanel, foodPanel, foodListPanel, namePanel, backButtonPanel, bottomPanel;
 	private JLabel catpngLabel, happinessLabel,hungryLabel;
 	private JMenuBar foodMenuBar;
 	private Food food1, food2, food3, food4, food5, food6;
 	private JMenu foodListMenu;
 	private JMenuItem foodRanked1, foodRanked2, foodRanked3, foodRanked4, foodRanked5, foodRanked6;
-	private JProgressBar happinessBar, hungerBar;
 	private ArrayList<Food> listOfFood;
 	private ImageIcon catIcon, happinessIcon, hungerIcon, miniIcon, miniCat;
 	private ClockPanel clock;

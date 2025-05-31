@@ -185,7 +185,7 @@ public class CatGame extends JFrame implements ActionListener {
 	}
 	
 	public void Starvation(CatPanel catPanel) {
-		 Timer timer = new Timer(1000, e -> {
+		 Timer timer = new Timer(5000, e -> {
 			 catPanel.cat.levelOfHunger -= 1;
 			 catPanel.cat.levelOfHappiness -= 1;
 			 if (catPanel.cat.levelOfHunger < 0) {

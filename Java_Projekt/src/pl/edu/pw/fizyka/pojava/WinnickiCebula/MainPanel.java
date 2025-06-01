@@ -28,7 +28,6 @@ public class MainPanel extends JPanel {
 		this.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
 		this.setBackground(backgroundColor);
 		
-		//panel górny z przyciskiem powrotu do ekranu startowego 
 		upperPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		upperPanel.setBackground(backgroundColor);
 		
@@ -37,11 +36,9 @@ public class MainPanel extends JPanel {
 		
 		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
 		
-		//panel środkowy z kotami
 		centerPanel = new JPanel();
 		centerPanel.setBackground(backgroundColor);
 		
-		//guziki-koty
 		catButton1 = new IconButton("hela.png", 0.3, "cat1");
 		catButton2 = new IconButton("mordka.png", 0.25, "cat2");
 		catButton3 = new IconButton("syczek.png", 0.25, "cat3");
@@ -54,7 +51,6 @@ public class MainPanel extends JPanel {
 		
 		this.add(centerPanel, BorderLayout.CENTER);
 		
-		//zegar
 		bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		bottomPanel.setBackground(backgroundColor);
 		clock = new ClockPanel();

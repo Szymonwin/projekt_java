@@ -41,7 +41,6 @@ public class CatGame extends JFrame implements ActionListener {
 		cards = new JPanel(cardLayout);
 		this.add(cards);
 		
-		//ogarnięcie CardLayoutu
 		menuPanel = new MenuPanel();
 		cards.add(menuPanel, "menu");
 		mainPanel = new MainPanel();
@@ -59,7 +58,6 @@ public class CatGame extends JFrame implements ActionListener {
 		catPanel4.catNameButton.setActionCommand("catName4");
 		cards.add(catPanel4, "cp4");
 		
-		//actionListener do wszystkich guzikow
 		menuPanel.start.addActionListener(this);
 		menuPanel.exit.addActionListener(this);
 		mainPanel.backToMenuButton.addActionListener(this);
@@ -90,15 +88,13 @@ public class CatGame extends JFrame implements ActionListener {
 		
 		UIManager.put("OptionPane.background",new ColorUIResource(255, 132, 239));
 		UIManager.put("Panel.background",new ColorUIResource(255, 132, 239));
-		
-		//głodnienie 
+		 
 		Starvation(catPanel1);
 		Starvation(catPanel2);
 		Starvation(catPanel3);
 		Starvation(catPanel4);
 	}
 	
-	//funckja onslugujaca wszystkie guziki w programie
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		command = e.getActionCommand();
@@ -186,7 +182,7 @@ public class CatGame extends JFrame implements ActionListener {
 	
 	public void Starvation(CatPanel catPanel) {
 		 Timer timer = new Timer(5000, e -> {
-			 catPanel.cat.levelOfHunger -= 1;
+			 catPanel.cat.levelOfHunger -= 2;
 			 catPanel.cat.levelOfHappiness -= 1;
 			 if (catPanel.cat.levelOfHunger < 0) {
 				 catPanel.cat.levelOfHunger = 0;

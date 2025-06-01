@@ -7,6 +7,7 @@ import javax.swing.JButton;
 
 /**
  * guzik z obrazkiem
+ * 
  * @author Marianka
  */
 public class IconButton extends JButton {
@@ -61,28 +62,5 @@ public class IconButton extends JButton {
 		this.setBackground(null);
 		this.setBorder(null);
 	} 
-	
-	/*public IconButton(String png, int h, String com) {
-		super();
-		this.pngName = png;
-		this.command = com;
-		
-		icon = new ImageIcon(pngName);
-		
-		double r = h / icon.getIconHeight();
-		
-		if( r != 1) {
-			img = icon.getImage();
-			newImg = img.getScaledInstance( (int)( icon.getIconWidth() * r ), (int)( icon.getIconHeight() * r ), Image.SCALE_SMOOTH);
-			newIcon = new ImageIcon(newImg);
-			this.setIcon(newIcon);
-		} else {
-			this.setIcon(icon);
-		}
-		
-		this.setActionCommand(command);
-		this.setBackground(null);
-		this.setBorder(null); 
-	} */
 
 }

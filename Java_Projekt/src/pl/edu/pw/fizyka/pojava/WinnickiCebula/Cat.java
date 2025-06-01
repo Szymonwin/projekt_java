@@ -18,6 +18,8 @@ public class Cat {
 	
 	public Cat(String name) {
 		this.name = name;
+		this.levelOfHunger = 50;
+		this.levelOfHappiness = 70;
 	}
 	
 	/**
@@ -29,6 +31,7 @@ public class Cat {
 	 */
 	public void feed(Food food) throws TooMuchFoodException, TooMuchHappinessException, HatedFoodException{
 		if(foodRanking.indexOf(food) == 5) {
+			levelOfHappiness -= 6;
 			throw new HatedFoodException();
 		} else {
 			levelOfHunger += food.foodPoints;
@@ -37,7 +40,7 @@ public class Cat {
 				levelOfHunger = maxFood;
 				throw new TooMuchFoodException();
 			} else {
-				levelOfHappiness += 4 * (6 - foodRanking.indexOf(food));
+				levelOfHappiness += 3 * (3 - foodRanking.indexOf(food));
 				if(levelOfHappiness > maxHappiness) {
 					levelOfHappiness = maxHappiness;
 					throw new TooMuchHappinessException();
@@ -48,7 +51,7 @@ public class Cat {
 	}
 	
 	/**
-	 * metoda ustawiająca =-losowy ranking jedzenia
+	 * metoda ustawiająca losowy ranking jedzenia
 	 * @return nic
 	 * @param nic
 	 */

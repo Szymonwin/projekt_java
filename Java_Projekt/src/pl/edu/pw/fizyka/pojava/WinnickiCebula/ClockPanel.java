@@ -11,6 +11,11 @@ import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.border.LineBorder;
 
+/**
+ * Panel z zegarem
+ * 
+ * @author Szymon
+ */
 public class ClockPanel extends JPanel{
 	private JLabel clockLabel;
 	private SimpleDateFormat dataFormat;

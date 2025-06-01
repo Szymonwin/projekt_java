@@ -55,7 +55,6 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		this.setLayout(new BorderLayout());
 		this.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
 		
-		//this.addComponentListener(this);
 		
 		cat = new Cat(catName);
 		
@@ -76,22 +75,18 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		
 		cat.rankFood(listOfFood);
 		
-		//panel górny z przyciskiem powrotu do MainPanel, imieniem kota oraz listą ulubionych potraw
 		upperPanel = new JPanel();
 		upperPanel.setLayout(new GridLayout());
 		upperPanel.setBackground(backgroundColor);
 		
 		this.add(upperPanel, BorderLayout.BEFORE_FIRST_LINE);
 		
-		//przycisk powrotu
 		backToMainButton = new IconButton("guzik.png", 50, 50, "backToMain");
 		backButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		backButtonPanel.setBackground(backgroundColor);
 		backButtonPanel.add(backToMainButton);
 		upperPanel.add(backButtonPanel);
 		
-		
-		//imię kota
 		catNameButton = new JButton(cat.name);
 		catNameButton.setFont(new Font("Helvetica", Font.BOLD, 40));
 		namePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -102,7 +97,6 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		namePanel.add(catNameButton);
 		upperPanel.add(namePanel);
 		
-		//lista ulubionych potraw kota
 		foodMenuBar = new JMenuBar();
 		foodListMenu = new JMenu("Favourite foods");
 		foodMenuBar.setBackground(buttonColor);
@@ -134,12 +128,10 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		foodListPanel.add(foodMenuBar);
 		upperPanel.add(foodListPanel);
 		
-		//panel środkowy z obrazkiem kota, jego statystykami oraz listą dostępnych potraw
 		centerPanel = new JPanel();
 		this.add(centerPanel,BorderLayout.CENTER);
 		centerPanel.setLayout(new BorderLayout());
 		
-		//panel ze statystykami kota
 		barPanel = new JPanel();
 		barPanel.setBackground(backgroundColor);
 		
@@ -168,14 +160,10 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		barPanel.add(hungerBar);
 		centerPanel.add(barPanel, BorderLayout.PAGE_START);
 		
-		//panel z obrazkiem kota
-		
-		//jest to bardzo robocze rozwiazanie chwilowo
 		catIcon = new ImageIcon(catPNG);
 		Image img = catIcon.getImage();
 		Image newImg = img.getScaledInstance( (int)( catIcon.getIconWidth() * 0.35 ), (int)( catIcon.getIconHeight() * 0.35 ), Image.SCALE_SMOOTH);
 		ImageIcon newIcon = new ImageIcon(newImg);
-		
 		
 		catImagePanel = new JPanel();
 		catpngLabel = new JLabel(newIcon);
@@ -184,7 +172,6 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		catImagePanel.add(catpngLabel);
 		centerPanel.add(catImagePanel,BorderLayout.CENTER);
 		
-		//panel z listą dostępnych potraw
 		foodPanel = new JPanel();
 		foodPanel.setBackground(backgroundColor);
 		foodPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -222,7 +209,6 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		foodPanel.add(foodButton5);
 		foodPanel.add(foodButton6); 
 		
-		//zegar
 		bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		bottomPanel.setBackground(backgroundColor);
 		clock = new ClockPanel();
@@ -271,47 +257,5 @@ public class CatPanel extends JPanel implements ActionListener/*, ComponentListe
 		
 		
 	}
-	
-	
-	
-	//to chwilowo nie dziala xdd
-	
-	/*
-	public ImageIcon setCatSize(ImageIcon catIcon) {
-		
-		int pWidth = super.getWidth();
-		int pHeight = super.getHeight();
-		
-		double ratio = Math.min((catIcon.getIconWidth() / pWidth)*200000, (catIcon.getIconHeight() / pHeight)*200000);
-		Image img = catIcon.getImage();
-		Image newImg = img.getScaledInstance((int)(ratio*catIcon.getIconWidth()), (int)(ratio*catIcon.getIconHeight()), Image.SCALE_SMOOTH);
-		ImageIcon newIcon = new ImageIcon(newImg);
-		
-		return newIcon;
-	}
-
-	@Override
-	public void componentResized(ComponentEvent e) {
-		catpngLabel.setIcon(setCatSize(catIcon));
-		
-	}
-
-	@Override
-	public void componentMoved(ComponentEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void componentShown(ComponentEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void componentHidden(ComponentEvent e) {
-		// TODO Auto-generated method stub
-		
-	} */
 	
 }

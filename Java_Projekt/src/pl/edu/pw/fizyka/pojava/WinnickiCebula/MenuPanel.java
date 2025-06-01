@@ -35,7 +35,6 @@ public class MenuPanel extends JPanel{
 	protected MenuPanel() {
 		super();
 		
-		//panel srodkowy oraz panel z guzikami
 		centerPanel = new JPanel(new BorderLayout()); 
 		centerPanel.setBackground(backgroundColor);
 		buttonPanel = new JPanel(new GridLayout(2,1,0,10));
@@ -55,7 +54,6 @@ public class MenuPanel extends JPanel{
 		buttonPanel.add(start); 
 		buttonPanel.add(exit);
 		
-		// czcionki Skia, SimSun
 		label = new JLabel("Cat Game");
 		label.setFont(new Font(null, Font.BOLD, 50));
 		newIcon = new ImageIcon("minicat.png");
@@ -66,11 +64,9 @@ public class MenuPanel extends JPanel{
 		titlePanel.add(new JLabel(miniCat));
 		titlePanel.add(label);
 		
-		
 		centerPanel.add(titlePanel, BorderLayout.PAGE_START);
 		centerPanel.add(buttonPanel, BorderLayout.CENTER);
 		
-		//walory estetyczne
 		boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
 		this.setLayout(boxLayout); 
 		this.setBorder(new EmptyBorder(new Insets(100, 100, 100, 100)));
